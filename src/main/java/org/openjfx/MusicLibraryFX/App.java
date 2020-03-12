@@ -33,33 +33,34 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
- /*       var javaVersion = SystemInfo.javaVersion();
-        var javafxVersion = SystemInfo.javafxVersion();
         Retrofit retrofit = new Retrofit.Builder()
         		.addConverterFactory(JacksonConverterFactory.create())
         	    .baseUrl("http://localhost:8080")
         	    .build();
-  Scene scene = new Scene(new StackPane());
   GitHubService service = retrofit.create(GitHubService.class);
-  try { Call<List<Artiste>> repos = service.artist();
-	
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".Successfull ? ="+repos.execute().body().toString());
-         scene = new Scene(new StackPane(label), 640, 480);}catch (Exception e){
-        	System.out.println(e.getMessage());
-        }
 
-    	stage.setScene(scene);
-        stage.show();*/
-        var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
-        var scene = new Scene(new StackPane(label), 640, 480);
-        stage.setScene(scene);
-        stage.show();
-        /* 
-         * stage.setTitle("test");
+        stage.setTitle("test");
         ToolBar toolbar = new ToolBar();
+        BorderPane layout = new BorderPane();
         HBox h = new HBox();
         VBox v = new VBox();
+        VBox artistVbox = new VBox();
         Button b = new Button("Songs");
+        b.setOnAction(e->{
+        	try { 
+        		Call<List<Artiste>> repos = service.artist();
+				List<Artiste> foundArtists = repos.execute().body();
+				for (Artiste artiste : foundArtists) {
+				
+					artistVbox.getChildren().add(new Label(Long.toString(artiste.getId())));
+					artistVbox.getChildren().add(new Label(artiste.getName()));
+				}
+				layout.setCenter(artistVbox);
+				
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
+        });
         Button b1 = new Button("PlayList");
         Button b2 = new Button("Artist");
         Button b3 = new Button("Album");
@@ -87,7 +88,6 @@ public class App extends Application {
         forward.setGraphic(forwardview);
         backward.setGraphic(backwardview);
         toolbar.getItems().addAll(b,new Separator(),b1,new Separator(),b2,new Separator(),b3);
-        BorderPane layout = new BorderPane();
         layout.setTop(toolbar);
         h.getChildren().add(backward);
         h.getChildren().add(play);
@@ -99,7 +99,6 @@ public class App extends Application {
         Scene scene = new Scene(layout, 600, 300);
         stage.setScene(scene);
         stage.show();
-         */
     }
 
     public static void main(String[] args) {
