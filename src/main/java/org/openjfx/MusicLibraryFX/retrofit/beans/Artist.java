@@ -1,22 +1,19 @@
-package org.openjfx.MusicLibraryFX.retroServices;
+package org.openjfx.MusicLibraryFX.retrofit.beans;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Artiste {
-	 @Override
-	public String toString() {
-		return "FUCKING ARTIST[id=" + id + ", name=" + name + "]";
-	}
+public class Artist {
+
 	@JsonProperty("id")
 	Long id;
 	 @JsonProperty("name")
 	String name;
 	
-	public Artiste() {
+	public Artist() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Artiste(Long id, String name) {
+	public Artist(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;

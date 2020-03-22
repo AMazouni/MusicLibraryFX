@@ -8,5 +8,5 @@ module MusicLibraryFX {
 	requires retrofit2.converter.jackson;
 	requires converter.gson;
 	requires com.fasterxml.jackson.annotation;
-	exports org.openjfx.MusicLibraryFX.retroServices;
+	exports org.openjfx.MusicLibraryFX.retrofit.beans;
 }
