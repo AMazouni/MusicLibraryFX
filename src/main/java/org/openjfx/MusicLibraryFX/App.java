@@ -33,7 +33,8 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage stage) throws IOException {
-		Retrofit retrofit = new Retrofit.Builder().addConverterFactory(JacksonConverterFactory.create())
+		Retrofit retrofit = new Retrofit.Builder()
+				.addConverterFactory(JacksonConverterFactory.create())
 				.baseUrl("http://localhost:8080").build();
 		ArtistRepo service = retrofit.create(ArtistRepo.class);
 
