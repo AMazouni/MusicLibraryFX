@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Genre;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
@@ -28,4 +30,6 @@ public interface AlbumRepo {
 	Call<List<Album>> findByReleaseDate(@Path("releaseDate") Date releaseDate);
 	@GET("/findByArtistId/ArtistId/{id}")
 	Call<List<Album>> findByArtistId(@Path("id") Long id);
+	@GET("/save")
+	Call<Integer> save(@Body Album album);
 }

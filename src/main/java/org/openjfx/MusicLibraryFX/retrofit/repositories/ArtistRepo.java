@@ -22,4 +22,8 @@ public interface ArtistRepo {
 	  Call<Integer> deleteById(@Path("id") Long id);
 	  @PUT("/update/Id/{id}")
 	  Call<Integer> update(@Path("id") Long id,@Body Artist artist);
+	  @GET("/save")
+	  Call<Integer> save(@Body Artist artist);
+	  @GET("/findByName/Name/{name}")
+	  Call<Artist> findbyName(@Path("name") String name);
 	}

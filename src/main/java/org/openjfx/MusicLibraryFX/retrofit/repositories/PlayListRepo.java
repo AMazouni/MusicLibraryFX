@@ -24,5 +24,5 @@ public interface PlayListRepo {
 	@POST("/save")
 	Call<Integer> save(@Body PlayList playList);
 	@GET("/findByLibelle/Libelle/{libelle}")
-	Call<List<PlayList>> findByLibelle(@Path("libelle") String libelle);
+	Call<PlayList> findByLibelle(@Path("libelle") String libelle);
 }
