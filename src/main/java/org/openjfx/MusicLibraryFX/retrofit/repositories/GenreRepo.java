@@ -11,16 +11,16 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface GenreRepo {
-	@GET("/findAll")
+	@GET("findAll")
 	Call<List<Genre>> findAll();
-	@GET("/findById/Id/{id}")
+	@GET("findById/Id/{id}")
 	Call<Genre> findById(@Path("id") Long id);
-	@DELETE("/deleteAll")
+	@DELETE("deleteAll")
 	Call<Integer> deleteAll();
-	@DELETE("/deleteById/Id/{id}")
+	@DELETE("deleteById/Id/{id}")
 	Call<Integer> deleteById(@Path("id") Long id);
-	@PUT("/update/Id/{id}")
+	@PUT("update/Id/{id}")
 	Call<Integer> update(@Path("id") Long id,@Body Genre genre);
-	@POST("/save")
+	@POST("save")
 	Call<Integer> save(@Body Genre genre);
 }

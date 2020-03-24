@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.openjfx.MusicLibraryFX.retrofit.beans.Artist;
 import org.openjfx.MusicLibraryFX.retrofit.repositories.ArtistRepo;
+import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.AlbumServiceImpl;
+import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.ArtistServiceImpl;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -33,10 +35,11 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage stage) throws IOException {
-		Retrofit retrofit = new Retrofit.Builder()
+	/*	Retrofit retrofit = new Retrofit.Builder()
 				.addConverterFactory(JacksonConverterFactory.create())
 				.baseUrl("http://localhost:8080").build();
-		ArtistRepo service = retrofit.create(ArtistRepo.class);
+		ArtistRepo service = retrofit.create(ArtistRepo.class);*/
+		ArtistServiceImpl artistServiceImpl = new ArtistServiceImpl();
 
 		stage.setTitle("test");
 
@@ -47,8 +50,8 @@ public class App extends Application {
 
 		b.setOnAction(e -> {
 			try {
-				Call<List<Artist>> repos = service.artist();
-				List<Artist> foundArtists = repos.execute().body();
+			//	Call<List<Artist>> repos = service.artist();
+				List<Artist> foundArtists = artistServiceImpl.findAll();
 				for (Artist artiste : foundArtists) {
 
 					artistVbox.getChildren().add(new Label(Long.toString(artiste.getId())));
@@ -57,7 +60,7 @@ public class App extends Application {
 				layout.setCenter(artistVbox);
 
 			} catch (IOException e1) {
-				e1.printStackTrace();
+				e1.getClass();
 			}
 		});
 		Button b1 = new Button("PlayList");

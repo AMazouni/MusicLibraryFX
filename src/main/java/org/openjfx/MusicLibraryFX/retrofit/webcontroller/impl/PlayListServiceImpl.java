@@ -14,7 +14,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 public class PlayListServiceImpl implements PlayListService{
 	Retrofit retrofit = new Retrofit.Builder()
 			.addConverterFactory(JacksonConverterFactory.create())
-			.baseUrl("http://localhost:8080").build();
+			.baseUrl("http://localhost:8080/MusicLibrary-Api/PlayList/").build();
 	PlayListRepo service = retrofit.create(PlayListRepo.class);
 	@Override
 	public List<PlayList> findAll() throws IOException {

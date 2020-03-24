@@ -14,7 +14,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 public class ArtistServiceImpl implements ArtistService {
 	Retrofit retrofit = new Retrofit.Builder()
 			.addConverterFactory(JacksonConverterFactory.create())
-			.baseUrl("http://localhost:8080").build();
+			.baseUrl("http://localhost:8080/MusicLibrary-Api/Artist/").build();
 	ArtistRepo service = retrofit.create(ArtistRepo.class);
 	
 	@Override

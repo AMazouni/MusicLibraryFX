@@ -18,7 +18,7 @@ public class SongServiceImpl implements SongService {
 	
 	Retrofit retrofit = new Retrofit.Builder()
 			.addConverterFactory(JacksonConverterFactory.create())
-			.baseUrl("http://localhost:8080").build();
+			.baseUrl("http://localhost:8080/MusicLibrary-Api/Song/").build();
 	SongRepo service = retrofit.create(SongRepo.class);
 	
 	@Override

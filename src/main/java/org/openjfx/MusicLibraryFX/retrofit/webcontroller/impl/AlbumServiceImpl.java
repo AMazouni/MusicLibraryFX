@@ -14,7 +14,7 @@ public class AlbumServiceImpl implements AlbumService {
 	
 	Retrofit retrofit = new Retrofit.Builder()
 			.addConverterFactory(JacksonConverterFactory.create())
-			.baseUrl("http://localhost:8080").build();
+			.baseUrl("http://localhost:8080/MusicLibrary-Api/Album/").build();
 	AlbumRepo service = retrofit.create(AlbumRepo.class);
 	
 	@Override

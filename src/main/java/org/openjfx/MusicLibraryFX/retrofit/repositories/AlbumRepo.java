@@ -14,22 +14,22 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface AlbumRepo {
-	@GET("/findAll")
+	@GET("findAll")
 	Call<List<Album>> findAll();
-	@GET("/findById/Id/{id}")
+	@GET("findById/Id/{id}")
 	Call<Album> findById(@Path("id") Long id);
-	@DELETE("/deleteAll")
+	@DELETE("deleteAll")
 	Call<Integer> deleteAll();
-	@DELETE("/deleteById/Id/{id}")
+	@DELETE("deleteById/Id/{id}")
 	Call<Integer> deleteById(@Path("id") Long id);
-	@PUT("/update/Id/{id}")
+	@PUT("update/Id/{id}")
 	Call<Integer> update(@Path("id") Long id,@Body Album album);
-	@GET("/findByLibelle/Libelle/{libelle}")
+	@GET("findByLibelle/Libelle/{libelle}")
 	Call<Album> findByLibelle(@Path("libelle") String libelle);
-	@GET("/findByReleaseDate/ReleaseDate/{releaseDate}")
+	@GET("findByReleaseDate/ReleaseDate/{releaseDate}")
 	Call<List<Album>> findByReleaseDate(@Path("releaseDate") Date releaseDate);
-	@GET("/findByArtistId/ArtistId/{id}")
+	@GET("findByArtistId/ArtistId/{id}")
 	Call<List<Album>> findByArtistId(@Path("id") Long id);
-	@GET("/save")
+	@GET("save")
 	Call<Integer> save(@Body Album album);
 }

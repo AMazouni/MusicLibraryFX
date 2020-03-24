@@ -12,18 +12,18 @@ import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface ArtistRepo {
-	  @GET("/findAll")
+	  @GET("findAll")
 	  Call<List<Artist>> findAll();
-	  @GET("/findById/Id/{id}")
+	  @GET("findById/Id/{id}")
 	  Call<Artist> findById(@Path("id") Long id);
-	  @DELETE("/deleteAll")
+	  @DELETE("deleteAll")
 	  Call<Integer> deleteAll();
-	  @DELETE("/deleteById/Id/{id}")
+	  @DELETE("deleteById/Id/{id}")
 	  Call<Integer> deleteById(@Path("id") Long id);
-	  @PUT("/update/Id/{id}")
+	  @PUT("update/Id/{id}")
 	  Call<Integer> update(@Path("id") Long id,@Body Artist artist);
-	  @GET("/save")
+	  @GET("save")
 	  Call<Integer> save(@Body Artist artist);
-	  @GET("/findByName/Name/{name}")
+	  @GET("findByName/Name/{name}")
 	  Call<Artist> findbyName(@Path("name") String name);
 	}
