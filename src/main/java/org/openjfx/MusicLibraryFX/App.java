@@ -32,23 +32,28 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 public class App extends Application {
 	static ToolBar toolbar = new ToolBar();
 	static BorderPane layout = new BorderPane();
-
+	static HBox h1 = new HBox();
+	static HBox h2 = new HBox();
+	static VBox v1 = new VBox();
+	static Button songsButton = new Button("Songs");
+	static Button playListButton = new Button("PlayList");
+	static Button artistButton = new Button("Artist");
+	static Button albumButton = new Button("Album");
+	static ProgressBar progressBar = new ProgressBar(0);
+	static Label l1 = new Label("00:00");
+	static Label l2 = new Label("03:26");
+	static Button play = new Button();
+	static Button forward = new Button();
+	static Button backward = new Button();
 	@Override
 	public void start(Stage stage) throws IOException {
-	/*	Retrofit retrofit = new Retrofit.Builder()
-				.addConverterFactory(JacksonConverterFactory.create())
-				.baseUrl("http://localhost:8080").build();
-		ArtistRepo service = retrofit.create(ArtistRepo.class);*/
-		ArtistServiceImpl artistServiceImpl = new ArtistServiceImpl();
-
+		Init();
 		stage.setTitle("test");
+		Scene scene = new Scene(layout, 600, 300);
+		stage.setScene(scene);
+		stage.show();
 
-		HBox h = new HBox();
-		VBox v = new VBox();
-		VBox artistVbox = new VBox();
-		Button b = new Button("Songs");
-
-		b.setOnAction(e -> {
+	/*	b.setOnAction(e -> {
 			try {
 			//	Call<List<Artist>> repos = service.artist();
 				List<Artist> foundArtists = artistServiceImpl.findAll();
@@ -60,48 +65,10 @@ public class App extends Application {
 				layout.setCenter(artistVbox);
 
 			} catch (IOException e1) {
-				e1.getClass();
+				e1.printStackTrace();
 			}
-		});
-		Button b1 = new Button("PlayList");
-		Button b2 = new Button("Artist");
-		Button b3 = new Button("Album");
-		ProgressBar progressBar = new ProgressBar(0);
-		progressBar.setMinWidth(550);
-		Image image = new Image("file:\\C:\\Users\\Ultrapc\\Desktop\\wallpapers\\play.png");
-		Image forwardImage = new Image("file:\\C:\\Users\\Ultrapc\\Desktop\\wallpapers\\fastforward.jpg");
-		Image BackwardImage = new Image("file:\\C:\\Users\\Ultrapc\\Desktop\\wallpapers\\backward.png");
-		Button play = new Button();
-		Button forward = new Button();
-		Button backward = new Button();
-		ImageView imageview = new ImageView(image);
-		imageview.setOpacity(0.20);
-		ImageView forwardview = new ImageView(forwardImage);
-		forwardview.setOpacity(0.20);
-		ImageView backwardview = new ImageView(BackwardImage);
-		backwardview.setOpacity(0.20);
-		imageview.setFitHeight(50);
-		imageview.setFitWidth(50);
-		forwardview.setFitHeight(50);
-		forwardview.setFitWidth(50);
-		backwardview.setFitHeight(50);
-		backwardview.setFitWidth(50);
-		play.setGraphic(imageview);
-		forward.setGraphic(forwardview);
-		backward.setGraphic(backwardview);
-		toolbar.getItems().addAll(b, new Separator(), b1, new Separator(), b2, new Separator(), b3);
-		layout.setTop(toolbar);
-		h.getChildren().add(backward);
-		h.getChildren().add(play);
-		h.getChildren().add(forward);
-		v.getChildren().add(progressBar);
-		h.setPadding(new Insets(0, 0, 0, 170));
-		v.getChildren().add(h);
-		layout.setBottom(v);
-		Scene scene = new Scene(layout, 600, 300);
-		stage.setScene(scene);
-		layout.setCenter(new tes());
-		stage.show();
+		}); */
+		
 
 	}
 
@@ -109,6 +76,41 @@ public class App extends Application {
 		launch();
 
 		System.out.println(layout.getScene());
+	}
+	//To initialize the first static template that won't change , top and bottom .
+	public void Init () {
+		// Initialize the Top
+		toolbar.getItems().addAll(songsButton, new Separator(), playListButton, new Separator(), artistButton, new Separator(), albumButton);
+		layout.setTop(toolbar);
+		// Initialize the Bottom
+		Image playimage = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\play.png");
+		Image forwardImage = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\fastforward.jpg");
+		Image BackwardImage = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\backward.png");
+		ImageView playview = new ImageView(playimage);
+		playview.setOpacity(0.20);
+		playview.setFitHeight(50);
+		playview.setFitWidth(50);
+		ImageView forwardview = new ImageView(forwardImage);
+		forwardview.setOpacity(0.20);
+		forwardview.setFitHeight(50);
+		forwardview.setFitWidth(50);
+		ImageView backwardview = new ImageView(BackwardImage);
+		backwardview.setOpacity(0.20);
+		backwardview.setFitHeight(50);
+		backwardview.setFitWidth(50);
+		play.setGraphic(playview);
+		forward.setGraphic(forwardview);
+		backward.setGraphic(backwardview);
+		h2.setSpacing(200);
+		h1.getChildren().add(backward);
+		h1.getChildren().add(play);
+		h1.getChildren().add(forward);
+		h2.getChildren().add(l1);
+		h2.getChildren().add(progressBar);
+		h2.getChildren().add(l2);
+		v1.getChildren().add(h2);
+		v1.getChildren().add(h1);
+		layout.setBottom(v1);
 	}
 
 }
