@@ -30,6 +30,8 @@ public interface SongRepo {
 	Call<List<Song>> findByReleaseDate(@Path("releaseDate") Date releaseDate);
 	@GET("findByAlbumId/AlbumId/{id}")
 	Call<List<Song>> findByAlbumId(@Path("id") Long id);
+	@GET("findByArtistId/Id/{id}")
+	Call<List<Song>> findByArtistId(@Path("id") Long id);
 	@GET("findByPlayListSongsPlayListId/Id/{id}")
 	Call<List<Song>> findByPlayListSongsPlayListId(@Path("id") Long id);
 	@GET("findByGenreId/Id/{id}")
