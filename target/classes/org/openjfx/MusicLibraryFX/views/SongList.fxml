@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SongListController">
    <children>
       <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
          <content>
             <TableView fx:id="tableView" editable="true" fixedCellSize="10.0" tableMenuButtonVisible="true">
                <columns>
+                  <TableColumn fx:id="Libelle" prefWidth="133.0" text="Song" />
+                  <TableColumn fx:id="artist" prefWidth="114.0" text="Artist" />
+                  <TableColumn fx:id="album" prefWidth="125.0" text="Album" />
+                  <TableColumn fx:id="ReleaseDate" prefWidth="188.0" text="Release Date" />
                   <TableColumn prefWidth="39.0" />
-                  <TableColumn prefWidth="133.0" text="Song" />
-                  <TableColumn prefWidth="114.0" text="Artist" />
-                  <TableColumn prefWidth="125.0" text="Album" />
-                  <TableColumn prefWidth="188.0" text="Release Date" />
                </columns>
             </TableView>
          </content>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <items>
+      <VBox prefHeight="398.0" prefWidth="206.0">
+         <children>
+            <ImageView fitHeight="182.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true" />
+            <Label prefHeight="42.0" prefWidth="236.0" text="Song name">
+               <padding>
+                  <Insets left="80.0" />
+               </padding>
+            </Label>
+            <Label layoutX="10.0" layoutY="192.0" prefHeight="42.0" prefWidth="236.0" text="Artist : artistName ">
+               <padding>
+                  <Insets left="70.0" />
+               </padding>
+            </Label>
+            <Label layoutX="10.0" layoutY="235.0" prefHeight="42.0" prefWidth="236.0" text="Genre : GenreName">
+               <padding>
+                  <Insets left="70.0" />
+               </padding>
+            </Label>
+            <Label layoutX="10.0" layoutY="277.0" prefHeight="42.0" prefWidth="236.0" text="Release date : releaseDate">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0">
+         <content>
+            <VBox prefHeight="384.0" prefWidth="287.0">
+               <children>
+                  <Label prefHeight="41.0" prefWidth="287.0" text="Lyrics :">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </Label>
+                  <TextField editable="false" prefHeight="338.0" prefWidth="287.0" />
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </items>
+</SplitPane>
