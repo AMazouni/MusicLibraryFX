@@ -29,7 +29,7 @@ public class App extends Application {
 	static Button backward = new Button();*/
 	@Override
 	public void start(Stage stage) throws IOException {
-	       Parent root = FXMLLoader.load(getClass().getResource("views/test.fxml"));
+	       Parent root = FXMLLoader.load(getClass().getResource("views/Main.fxml"));
 	       
 	        Scene scene = new Scene(root);
 	        stage.setResizable(false);
