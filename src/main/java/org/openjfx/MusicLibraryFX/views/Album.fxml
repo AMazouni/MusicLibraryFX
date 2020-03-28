@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="223.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="169.0" fitWidth="225.0" pickOnBounds="true" preserveRatio="true" />
+      <Label prefHeight="52.0" prefWidth="386.0" text="Album Name">
+         <padding>
+            <Insets left="80.0" />
+         </padding>
+      </Label>
+      <Label layoutX="10.0" layoutY="180.0" prefHeight="52.0" prefWidth="383.0" text="Artist Name">
+         <padding>
+            <Insets left="80.0" />
+         </padding>
+      </Label>
+   </children>
+</VBox>

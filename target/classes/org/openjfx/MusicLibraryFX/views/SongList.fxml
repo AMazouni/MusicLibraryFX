@@ -7,24 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 
-
-<fx:root type="StackPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SongListController">
+<StackPane minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
          <content>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
-               <children>
-                  <TableView fx:id="TableView" layoutX="72.0" layoutY="6.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                      <TableColumn prefWidth="39.0" />
-                      <TableColumn prefWidth="133.0" text="Song" />
-                        <TableColumn prefWidth="114.0" text="Artist" />
-                        <TableColumn prefWidth="125.0" text="Album" />
-                        <TableColumn prefWidth="188.0" text="Release Date" />
-                    </columns>
-                  </TableView>
-               </children>
-            </AnchorPane>
+            <TableView fx:id="tableView" editable="true" fixedCellSize="10.0" tableMenuButtonVisible="true">
+               <columns>
+                  <TableColumn prefWidth="39.0" />
+                  <TableColumn prefWidth="133.0" text="Song" />
+                  <TableColumn prefWidth="114.0" text="Artist" />
+                  <TableColumn prefWidth="125.0" text="Album" />
+                  <TableColumn prefWidth="188.0" text="Release Date" />
+               </columns>
+            </TableView>
          </content>
       </ScrollPane>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -33,4 +28,4 @@
          </children>
       </AnchorPane>
    </children>
-</fx:root>
+</StackPane>
