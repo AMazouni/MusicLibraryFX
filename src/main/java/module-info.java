@@ -10,5 +10,7 @@ module MusicLibraryFX {
 	requires javafx.fxml;
 	requires com.fasterxml.jackson.annotation;
 	exports org.openjfx.MusicLibraryFX.retrofit.beans;
-	
+	exports org.openjfx.MusicLibraryFX.controllers;
+	opens org.openjfx.MusicLibraryFX.controllers;
+
 }

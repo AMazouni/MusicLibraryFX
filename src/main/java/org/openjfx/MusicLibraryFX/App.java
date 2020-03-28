@@ -1,6 +1,7 @@
 package org.openjfx.MusicLibraryFX;
 
 import java.io.IOException;
+import java.net.URL;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -27,15 +28,19 @@ public class App extends Application {
 	static Button play = new Button();
 	static Button forward = new Button();
 	static Button backward = new Button();*/
+	
 	@Override
 	public void start(Stage stage) throws IOException {
+
+	       /*Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("src/main/java/org/openjfx/MusicLibraryFX/views/Album.fxml"));*/
 	       Parent root = FXMLLoader.load(getClass().getResource("views/Main.fxml"));
-	       
 	        Scene scene = new Scene(root);
+	        scene.setRoot(root);
 	        stage.setResizable(false);
 	        stage.setTitle("FXML Welcome");
 	        stage.setScene(scene);
-	        stage.show();
+	        stage.show();}
+
 		/*Init();
 		stage.setTitle("test");
 		Scene scene = new Scene(layout, 600, 300);
@@ -59,10 +64,11 @@ public class App extends Application {
 		}); */
 		
 
-	}
+	
 
 	public static void main(String[] args) {
 		launch();
+		
 
 		
 	}
