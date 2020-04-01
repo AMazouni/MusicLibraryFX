@@ -11,17 +11,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox prefHeight="112.0" prefWidth="822.0">
+      <HBox prefHeight="112.0" prefWidth="822.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="150.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wallpapers/arctic%20monkeys.jpg" />
                </image>
             </ImageView>
-            <VBox prefHeight="150.0" prefWidth="158.0">
+            <VBox>
                <children>
                   <Label prefHeight="18.0" prefWidth="122.0" text="Now Playing :">
                      <font>

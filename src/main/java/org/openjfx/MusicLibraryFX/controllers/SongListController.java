@@ -1,47 +1,44 @@
 package org.openjfx.MusicLibraryFX.controllers;
 
+
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import org.openjfx.MusicLibraryFX.App;
-import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 
+import org.openjfx.MusicLibraryFX.retrofit.beans.*;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
-public class SongListController {
+public class SongListController implements Initializable {
+
+	 private List<Song> listSong;
+    @FXML
+    private StackPane stackpaneSongList;
 
     @FXML
-    private StackPane stackpane;
+    private ScrollPane scrollPaneSongList;
 
     @FXML
-    private TableView<?> tableView;
+    private VBox songsVBox;
 
     @FXML
-    private TableColumn<?, ?> Libelle;
+    private Button reloadButton;
 
     @FXML
-    private TableColumn<?, ?> artist;
-
-    @FXML
-    private TableColumn<?, ?> album;
-
-    @FXML
-    private TableColumn<?, ?> ReleaseDate;
-
-    @FXML
-    private Button Reload;
-
-    @FXML
-    void ReloadList(MouseEvent event) {
-    	System.out.println( App.class.getResource("views/Song.fxml"));
+    void reloadSongList(ActionEvent event) {
+    	/*System.out.println( App.class.getResource("views/Song.fxml"));
    try {
 	   FXMLLoader loader = new FXMLLoader();
 
@@ -49,12 +46,12 @@ public class SongListController {
 	   loader.setController(new SongController("TEST"));
 	  
 	   Parent node = loader.load();
-	   stackpane.getChildren().add(stackpane.getChildren().size(),node );
+	   stackpaneSongList.getChildren().add( );
 	  
 } catch (IOException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
-}    }
+}  */ }
     
     public void genereateSongList (List<Song> songs) {
     	/*Libelle.setCellValueFactory(new PropertyValueFactory<>("libelle"));
@@ -66,4 +63,29 @@ public class SongListController {
 		}
 		*/
     }
+
+	public SongListController(List<Song> listSong) {
+		super();
+		this.listSong = listSong;
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		try {
+			for(Song song : listSong){
+ 		   FXMLLoader loader = new FXMLLoader();
+
+ 		   loader.setLocation( App.class.getResource("views/SongRow.fxml"));
+ 		   loader.setController(new SongRowController(song.getLibelle(), song.getArtist().getName(), song.getAlbum().getLibelle(), "ROCK"));
+ 		  
+ 		   Parent node = loader.load();
+ 		   songsVBox.getChildren().add(node);
+ 		   }
+ 		  
+ 	} catch (IOException e) {
+ 		e.printStackTrace();
+ 	}
+		
+	}
 }

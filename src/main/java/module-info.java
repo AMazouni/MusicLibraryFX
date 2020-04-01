@@ -9,6 +9,8 @@ module MusicLibraryFX {
 	requires converter.gson;
 	requires javafx.fxml;
 	requires com.fasterxml.jackson.annotation;
+	requires jdk.compiler;
+	
 	exports org.openjfx.MusicLibraryFX.retrofit.beans;
 	exports org.openjfx.MusicLibraryFX.controllers;
 

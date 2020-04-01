@@ -1,7 +1,15 @@
 package org.openjfx.MusicLibraryFX;
 
 import java.io.IOException;
-import java.net.URL;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import org.openjfx.MusicLibraryFX.controllers.MainController;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Artist;
+import org.openjfx.MusicLibraryFX.retrofit.beans.PlayList;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +41,29 @@ public class App extends Application {
 	public void start(Stage stage) throws IOException {
 
 	       /*Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("src/main/java/org/openjfx/MusicLibraryFX/views/Album.fxml"));*/
-	       Parent root = FXMLLoader.load(getClass().getResource("views/Main.fxml"));
+	      List<Song> listSongs = new ArrayList<Song>();
+	      List<Album> listAlbum = new ArrayList<Album>();
+	      List<PlayList> listPlaylist = new ArrayList<PlayList>();
+	      List<Artist> listArtist = new ArrayList<Artist>();
+	      long id = 2;
+	      Artist artist1 = new Artist();
+	      artist1.setId(id);
+	      artist1.setName("Artist1");
+	      Album album1= new Album(id,"Album",new Date(),listSongs,artist1);
+	      Song song1 = new Song(id, "Song1", new Date(), album1, artist1, null, null);
+	      Song song2 = new Song(id+2, "Song2", new Date(), album1, artist1, null, null);
+	      listSongs.add(song1);
+	      listSongs.add(song2);
+	      listAlbum.add(album1);
+		FXMLLoader loader = new FXMLLoader();
+
+		   loader.setLocation( App.class.getResource("views/Main.fxml"));
+		   loader.setController(new MainController(listSongs,listAlbum,listPlaylist,listArtist));
+		  
+		   Parent root = loader.load();
+		
+		
+	/*	Parent root = FXMLLoader.load(getClass().getResource("views/Main.fxml")); */
 	        Scene scene = new Scene(root);
 	        scene.setRoot(root);
 	        stage.setResizable(false);
