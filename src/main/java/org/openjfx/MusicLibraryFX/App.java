@@ -65,12 +65,12 @@ public class App extends Application {
 	      listSongs.add(song6);
 	      listSongs.add(song6); listSongs.add(song6);
 	      listSongs.add(song6);
-
 	      listAlbum.add(album1);
+	      String SongName = "MP3Test";
 		FXMLLoader loader = new FXMLLoader();
 
 		   loader.setLocation( App.class.getResource("views/Main.fxml"));
-		   loader.setController(new MainController(listSongs,listAlbum,listPlaylist,listArtist));
+		   loader.setController(new MainController(listSongs,listAlbum,listPlaylist,listArtist,SongName));
 		  
 		   Parent root = loader.load();
 		

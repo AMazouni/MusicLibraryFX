@@ -25,16 +25,17 @@ public class MainController implements Initializable {
  private List<Album> listAlbum;
  private List<PlayList> listPlayList;
  private List<Artist> listArtist;
- 
+ String SongName;
  
 
 	public MainController(List<Song> listSongs, List<Album> listAlbum, List<PlayList> listPlayList,
-		List<Artist> listArtist) {
+		List<Artist> listArtist,String SongName) {
 	super();
 	this.listSongs = listSongs;
 	this.listAlbum = listAlbum;
 	this.listPlayList = listPlayList;
 	this.listArtist = listArtist;
+	this.SongName = SongName;
 }
 
 	@FXML
@@ -80,6 +81,7 @@ public class MainController implements Initializable {
     		
     		   FXMLLoader loader2 = new FXMLLoader();
     		   loader2.setLocation( App.class.getResource("views/Player.fxml"));
+    		   loader2.setController(new PlayerController(SongName));
     		   Parent node2 = loader2.load();
     		   
     		   borderPaneRoot.setBottom(node2);
