@@ -13,7 +13,7 @@ module MusicLibraryFX {
 	
 	exports org.openjfx.MusicLibraryFX.retrofit.beans;
 	exports org.openjfx.MusicLibraryFX.controllers;
-
+    
 	opens org.openjfx.MusicLibraryFX.controllers;
 	opens org.openjfx.MusicLibraryFX.views;
 
