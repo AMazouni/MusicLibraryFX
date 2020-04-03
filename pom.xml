@@ -59,6 +59,12 @@
     <version>3.8.6</version>
 </dependency>
 
+<dependency>
+   <groupId>com.github.goxr3plus</groupId>
+   <artifactId>java-stream-player</artifactId>
+   <version>9.0.4</version>
+</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -107,5 +113,9 @@
     <id>gluon-nexus-repository</id>
     <url>http://nexus.gluonhq.com/nexus/content/repositories/releases/</url>
   </repository>
+  	<repository>
+	   <id>jitpack.io</id>
+	   <url>https://jitpack.io</url>
+        </repository>
 </repositories>
 </project>
