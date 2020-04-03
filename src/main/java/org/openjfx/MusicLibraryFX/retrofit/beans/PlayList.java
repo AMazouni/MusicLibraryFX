@@ -7,8 +7,9 @@ public class PlayList {
 
 	Long id;
 	String libelle;
+	
     List<Song> songs = new ArrayList<Song>();
-    List<PlayListSong> playListSongs = new ArrayList<PlayListSong>();
+ 
 	public Long getId() {
 		return id;
 	}
@@ -27,18 +28,13 @@ public class PlayList {
 	public void setSongs(List<Song> songs) {
 		this.songs = songs;
 	}
-	public List<PlayListSong> getPlayListSongs() {
-		return playListSongs;
-	}
-	public void setPlayListSongs(List<PlayListSong> playListSongs) {
-		this.playListSongs = playListSongs;
-	}
-	public PlayList(Long id, String libelle, List<Song> songs, List<PlayListSong> playListSongs) {
+
+	public PlayList(Long id, String libelle, List<Song> songs) {
 		super();
 		this.id = id;
 		this.libelle = libelle;
 		this.songs = songs;
-		this.playListSongs = playListSongs;
+
 	}
 	public PlayList() {
 		super();

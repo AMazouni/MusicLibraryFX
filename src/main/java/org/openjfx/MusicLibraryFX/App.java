@@ -39,22 +39,8 @@ public class App extends Application {
 	      artist1.setId(id);
 	      artist1.setName("Artist1");
 	      Album album1= new Album(id,"Album",new Date(),listSongs,artist1);
-	      Song song1 = new Song(id, "Song1", new Date(), album1, artist1, null, null);
-	      Song song2 = new Song(id+2, "Song2", new Date(), album1, artist1, null, null);
-	      Song song3 = new Song(id+2, "Song3", new Date(), album1, artist1, null, null);
-	      Song song4 = new Song(id+2, "Song4", new Date(), album1, artist1, null, null);
-	      Song song5 = new Song(id+2, "Song5", new Date(), album1, artist1, null, null);
-	      Song song6 = new Song(id+2, "Song6", new Date(), album1, artist1, null, null);
-	      listSongs.add(song1);
-	      listSongs.add(song2);
-	      listSongs.add(song3);
-	      listSongs.add(song4);
-	      listSongs.add(song5);
-	      listSongs.add(song6);
-	      listSongs.add(song6);
-	      listSongs.add(song6); listSongs.add(song6);
-	      listSongs.add(song6);
-	      listAlbum.add(album1);
+	
+
 	      String SongName = "MP3Test";
 		FXMLLoader loader = new FXMLLoader();
 

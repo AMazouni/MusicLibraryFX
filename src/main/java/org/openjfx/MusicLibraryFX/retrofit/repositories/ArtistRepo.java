@@ -2,7 +2,9 @@ package org.openjfx.MusicLibraryFX.retrofit.repositories;
 
 import java.util.List;
 
+import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
 import org.openjfx.MusicLibraryFX.retrofit.beans.Artist;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -20,10 +22,18 @@ public interface ArtistRepo {
 	  Call<Integer> deleteAll();
 	  @DELETE("deleteById/Id/{id}")
 	  Call<Integer> deleteById(@Path("id") Long id);
-	  @PUT("update/Id/{id}")
-	  Call<Integer> update(@Path("id") Long id,@Body Artist artist);
+	  @PUT("update/name/{name}")
+	  Call<Integer> update(@Path("name") String name,@Body Artist artist);
 	  @GET("save")
 	  Call<Integer> save(@Body Artist artist);
 	  @GET("findByName/Name/{name}")
 	  Call<Artist> findbyName(@Path("name") String name);
+	  @GET("/findByName/Name/{name}/ListSongs")
+	  Call<List<Song>> ListSongsByName(@Path("name") String name);
+	  @GET("/findByName/Id/{id}/ListSongs")
+	  Call<List<Song>> ListSongsById(@Path("name") String name);
+	  @GET("/findByName/Name/{name}/ListAlbums")
+	  Call<List<Album>> ListAlbumsByName(@Path("name") String name);
+	  @GET("/findByName/Id/{id}/ListAlbums")
+	  Call<List<Album>> ListAlbumsById(@Path("name") String name);
 	}

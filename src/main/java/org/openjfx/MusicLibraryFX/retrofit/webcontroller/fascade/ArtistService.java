@@ -14,9 +14,11 @@ public interface ArtistService {
 
 	public int deleteById(Long id) throws IOException;
 
-	public int update(Long id, Artist artist) throws IOException;
+	
 
 	public int save(Artist artist) throws IOException;
 
 	public Artist findbyName(String name) throws IOException;
+
+	int update(String Libelle, Artist artist) throws IOException;
 }

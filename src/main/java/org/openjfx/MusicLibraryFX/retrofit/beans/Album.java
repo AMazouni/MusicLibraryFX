@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
+
 public class Album {
 
 	Long id;
 	String libelle;
 	Date releaseDate;
-
-	List<Song> songs = new ArrayList<Song>();
 	Artist artist;
-
+	String picture;
+	
+	List<Song> songs = new ArrayList<Song>();
+	
 	public Long getId() {
 		return id;
 	}

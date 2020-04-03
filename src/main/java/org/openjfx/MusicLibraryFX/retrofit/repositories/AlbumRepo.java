@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
 import org.openjfx.MusicLibraryFX.retrofit.beans.Genre;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -32,4 +33,10 @@ public interface AlbumRepo {
 	Call<List<Album>> findByArtistId(@Path("id") Long id);
 	@GET("save")
 	Call<Integer> save(@Body Album album);
+	@GET("searchByLibelle/Libelle/{Libelle}")
+	Call<List<Album>> searchByLibelle(@Path("Libelle")String Libelle);
+	@GET("findByLibelle/Libelle/{libelle}/ListSongs")
+	Call<List<Song>> ListSongsByLibelle(@Path("libelle") String libelle);
+	@GET("findById/Id/{Id}/ListSongs")
+	Call<List<Song>> ListSongsById(@Path("Id") Long id);
 }

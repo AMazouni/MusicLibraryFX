@@ -46,8 +46,8 @@ public class ArtistServiceImpl implements ArtistService {
 	}
 
 	@Override
-	public int update(Long id, Artist artist) throws IOException {
-		Call<Integer> repos = service.update(id, artist);
+	public int update(String libelle, Artist artist) throws IOException {
+		Call<Integer> repos = service.update(libelle, artist);
 		int result = repos.execute().body();
 		return result;
 	}

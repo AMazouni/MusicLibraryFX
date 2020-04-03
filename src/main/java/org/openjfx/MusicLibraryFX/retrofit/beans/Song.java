@@ -4,14 +4,18 @@ package org.openjfx.MusicLibraryFX.retrofit.beans;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+
 public class Song {
 	Long id;
 	String libelle;
 	Date releaseDate;
 	Album album;
 	Artist artist;
-	List<PlayListSong> playListSongs = new ArrayList<PlayListSong>();
+	
 	Genre genre;
+	String songPath;
+    String[] lyrics;
 	public Long getId() {
 		return id;
 	}
@@ -42,32 +46,41 @@ public class Song {
 	public void setArtist(Artist artist) {
 		this.artist = artist;
 	}
-	public List<PlayListSong> getPlayListSongs() {
-		return playListSongs;
-	}
-	public void setPlayListSongs(List<PlayListSong> playListSongs) {
-		this.playListSongs = playListSongs;
-	}
 	public Genre getGenre() {
 		return genre;
 	}
 	public void setGenre(Genre genre) {
 		this.genre = genre;
 	}
-	public Song(Long id, String libelle, Date releaseDate, Album album, Artist artist, List<PlayListSong> playListSongs,
-			Genre genre) {
+	public String getSongPath() {
+		return songPath;
+	}
+	public void setSongPath(String songPath) {
+		this.songPath = songPath;
+	}
+	public String[] getLyrics() {
+		return lyrics;
+	}
+	public void setLyrics(String[] lyrics) {
+		this.lyrics = lyrics;
+	}
+
+	public Song(Long id, String libelle, Date releaseDate, Album album, Artist artist, Genre genre, String songPath,
+			String[] lyrics) {
 		super();
 		this.id = id;
 		this.libelle = libelle;
 		this.releaseDate = releaseDate;
 		this.album = album;
 		this.artist = artist;
-		this.playListSongs = playListSongs;
 		this.genre = genre;
+		this.songPath = songPath;
+		this.lyrics = lyrics;
 	}
 	public Song() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 }
