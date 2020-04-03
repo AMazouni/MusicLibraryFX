@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.Avatar?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,25 +14,22 @@
         <tabs>
           <Tab fx:id="songTab" closable="false" text="Songs">
             <content>
-                  <AnchorPane fx:id="songTabAnchor">
-                     <children>
-                        <Avatar layoutX="100.0" layoutY="108.0" />
-                     </children></AnchorPane>
+                  <AnchorPane fx:id="songTabAnchor" />
             </content>
           </Tab>
           <Tab fx:id="AlbumTab" text="Albums">
             <content>
-                  <AnchorPane prefHeight="261.0" prefWidth="822.0" />
+                  <AnchorPane fx:id="albumTabAnchor" prefHeight="261.0" prefWidth="822.0" />
             </content>
           </Tab>
             <Tab fx:id="playListsTab" text="PlayLists">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane fx:id="playListTabAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
             <Tab fx:id="artistsTab" text="Artists">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane fx:id="artistsTabAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                </content>
             </Tab>
         </tabs>

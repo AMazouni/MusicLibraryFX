@@ -11,36 +11,25 @@ import org.openjfx.MusicLibraryFX.retrofit.beans.Artist;
 import org.openjfx.MusicLibraryFX.retrofit.beans.PlayList;
 import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 
+import com.gluonhq.charm.glisten.visual.Theme;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
-/*	static ToolBar toolbar = new ToolBar();
-	static BorderPane layout = new BorderPane();
-	static HBox h1 = new HBox();
-	static HBox h2 = new HBox();
-	static VBox v1 = new VBox();
-	static Button songsButton = new Button("Songs");
-	static Button playListButton = new Button("PlayList");
-	static Button artistButton = new Button("Artist");
-	static Button albumButton = new Button("Album");
-	static ProgressBar progressBar = new ProgressBar(0);
-	static Label l1 = new Label("00:00");
-	static Label l2 = new Label("03:26");
-	static Button play = new Button();
-	static Button forward = new Button();
-	static Button backward = new Button();*/
+
 	
 	@Override
 	public void start(Stage stage) throws IOException {
 
-	       /*Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("src/main/java/org/openjfx/MusicLibraryFX/views/Album.fxml"));*/
+	      
 	      List<Song> listSongs = new ArrayList<Song>();
 	      List<Album> listAlbum = new ArrayList<Album>();
 	      List<PlayList> listPlaylist = new ArrayList<PlayList>();
@@ -74,15 +63,17 @@ public class App extends Application {
 		  
 		   Parent root = loader.load();
 		
-		
+		   
 	/*	Parent root = FXMLLoader.load(getClass().getResource("views/Main.fxml")); */
 	        Scene scene = new Scene(root);
-	        scene.getStylesheets().setAll(App.class.getResource("views/stylesheet.css").toExternalForm());
-	        
+	  
+     
+         scene.getStylesheets().setAll(App.class.getResource("views/stylesheet.css").toExternalForm());
 	        scene.setRoot(root);
 	        stage.setResizable(false);
 	        stage.setTitle("FXML Welcome");
 	        stage.setScene(scene);
+
 	        stage.show();}
 
 		/*Init();

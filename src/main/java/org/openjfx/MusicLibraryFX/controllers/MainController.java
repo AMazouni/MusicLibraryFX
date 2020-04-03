@@ -62,6 +62,15 @@ public class MainController implements Initializable {
     @FXML
     private Tab artistsTab;
     
+    @FXML
+    private AnchorPane artistsTabAnchor;
+    
+    @FXML
+    private AnchorPane playListTabAnchor;
+
+    @FXML
+    private AnchorPane albumTabAnchor;
+    
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
     	try {
@@ -92,5 +101,61 @@ public class MainController implements Initializable {
     	}
 		
 	}
+    
+    public void initAlbumList() {
+       	try {
+ 		   FXMLLoader loader = new FXMLLoader();
+
+ 		   loader.setLocation( App.class.getResource("views/AlbumList.fxml"));
+ 		   loader.setController(new AlbumsListController(listAlbum));
+ 		  
+ 		   Parent node = loader.load();
+ 		  songTabAnchor.getChildren().add(node);
+ 		   songTabAnchor.setTopAnchor(node, 0d);
+ 		   songTabAnchor.setBottomAnchor(node, 0d);
+ 		   songTabAnchor.setRightAnchor(node, 0d);
+ 		   songTabAnchor.setLeftAnchor(node, 0d);
+ 		
+ 		   
+ 		
+ 		   FXMLLoader loader2 = new FXMLLoader();
+ 		   loader2.setLocation( App.class.getResource("views/Player.fxml"));
+ 		   Parent node2 = loader2.load();
+ 		   
+ 		   borderPaneRoot.setBottom(node2);
+ 		   
+ 		  
+ 	} catch (IOException e) {
+ 		e.printStackTrace();
+ 	}
+    }
+    
+    public void initSongList() {
+       	try {
+ 		   FXMLLoader loader = new FXMLLoader();
+
+ 		   loader.setLocation( App.class.getResource("views/SongList.fxml"));
+ 		   loader.setController(new SongListController(listSongs));
+ 		  
+ 		   Parent node = loader.load();
+ 		  songTabAnchor.getChildren().add(node);
+ 		   songTabAnchor.setTopAnchor(node, 0d);
+ 		   songTabAnchor.setBottomAnchor(node, 0d);
+ 		   songTabAnchor.setRightAnchor(node, 0d);
+ 		   songTabAnchor.setLeftAnchor(node, 0d);
+ 		
+ 		   
+ 		
+ 		   FXMLLoader loader2 = new FXMLLoader();
+ 		   loader2.setLocation( App.class.getResource("views/Player.fxml"));
+ 		   Parent node2 = loader2.load();
+ 		   
+ 		   borderPaneRoot.setBottom(node2);
+ 		   
+ 		  
+ 	} catch (IOException e) {
+ 		e.printStackTrace();
+ 	}
+    }
 
 }

@@ -10,11 +10,15 @@ module MusicLibraryFX {
 	requires javafx.fxml;
 	requires com.fasterxml.jackson.annotation;
 	requires jdk.compiler;
+	requires com.gluonhq.charm.glisten;
+	requires com.gluonhq.attach.util;
+
 	requires java.desktop;
+	requires javafx.media;
+	
 	
 	exports org.openjfx.MusicLibraryFX.retrofit.beans;
 	exports org.openjfx.MusicLibraryFX.controllers;
-    
 	opens org.openjfx.MusicLibraryFX.controllers;
 	opens org.openjfx.MusicLibraryFX.views;
 
