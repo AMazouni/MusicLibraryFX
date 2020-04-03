@@ -11,6 +11,7 @@ import javax.sound.sampled.AudioSystem;
 
 import org.openjfx.MusicLibraryFX.App;
 
+import com.goxr3plus.streamplayer.enums.Status;
 import com.goxr3plus.streamplayer.stream.StreamPlayer;
 import com.goxr3plus.streamplayer.stream.StreamPlayerEvent;
 import com.goxr3plus.streamplayer.stream.StreamPlayerListener;
@@ -60,6 +61,7 @@ public class PlayerController extends StreamPlayer implements Initializable,Stre
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
+	    addStreamPlayerListener(this);
 		open(new File(System.getProperty("user.dir") + "\\Songs\\" + "MP3Test.mp3"));
 		play();
 		} catch (Exception e) {
@@ -82,7 +84,27 @@ public class PlayerController extends StreamPlayer implements Initializable,Stre
 	@Override
 	public void statusUpdated(StreamPlayerEvent event) {
 		// TODO Auto-generated method stub
-		
+		// Player status
+        final Status status = event.getPlayerStatus();
+        // System.out.println(streamPlayerEvent.getPlayerStatus());
+
+        // Examples
+
+        if (status == Status.OPENED) {
+        	
+        } else if (status == Status.OPENING) {
+
+        } else if (status == Status.RESUMED) {
+
+        } else if (status == Status.PLAYING) {
+
+        } else if (status == Status.STOPPED) {
+
+        } else if (status == Status.SEEKING) {
+
+        } else if (status == Status.SEEKED) {
+
+        }
 	}
 
 }
