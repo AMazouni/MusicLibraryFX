@@ -63,7 +63,9 @@ public class PlayerController extends StreamPlayer implements Initializable,Stre
 		try {
 	    addStreamPlayerListener(this);
 		open(new File(System.getProperty("user.dir") + "\\Songs\\" + "MP3Test.mp3"));
+		
 		play();
+		setMute(true);
 		} catch (Exception e) {
 			e.getStackTrace();
 		}

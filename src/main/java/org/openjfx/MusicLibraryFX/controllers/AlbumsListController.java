@@ -45,10 +45,11 @@ public class AlbumsListController implements Initializable {
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			// TODO Auto-generated method stub
+		
 			try {
 			for (Album album : listAlbum) {
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(App.class.getResource("views/AlbumController.fxml"));
+				loader.setLocation(App.class.getResource("views/Album.fxml"));
 				loader.setController(new AlbumController(album));
 				Parent node = loader.load();
 				albumFlowPane.getChildren().add(node);
