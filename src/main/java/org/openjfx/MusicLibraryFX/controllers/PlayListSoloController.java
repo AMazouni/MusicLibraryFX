@@ -8,6 +8,7 @@ import org.openjfx.MusicLibraryFX.retrofit.beans.PlayList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class PlayListSoloController implements Initializable{
@@ -28,6 +29,7 @@ public class PlayListSoloController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		playListName.setText(playList.getLibelle());
+		playListImage.setImage(new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\"+ "arctic monkeys" + ".jpg"));
 	}
     
 }
