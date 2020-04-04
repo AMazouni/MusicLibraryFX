@@ -52,6 +52,9 @@ public class App extends Application {
 		   List <PlayList> listPlayList = playListServiceImpl.findAll();
 		   List<Album> listAlbum = albumServiceImpl.findAll();
 		   List <Song> listSongs = songServiceImpl.findAll();
+    for (Album album : listAlbum) {
+		System.out.println(album.getLibelle()+album.getPicture());
+	}
 		   FXMLLoader loader = new FXMLLoader();
 		   loader.setLocation( App.class.getResource("views/Main.fxml"));
 		   loader.setController(new MainController(listSongs,listAlbum,listPlayList,listArtist,"arctic monkeys"));

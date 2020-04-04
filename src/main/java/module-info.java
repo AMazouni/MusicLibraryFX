@@ -16,6 +16,7 @@ module MusicLibraryFX {
 	requires java.desktop;
 	requires javafx.media;
 	requires com.goxr3plus.streamplayer;
+	requires java.sql;
 	
 	
 	exports org.openjfx.MusicLibraryFX.retrofit.beans;

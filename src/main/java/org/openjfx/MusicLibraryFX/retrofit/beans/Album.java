@@ -1,10 +1,6 @@
 package org.openjfx.MusicLibraryFX.retrofit.beans;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
-
 
 public class Album {
 
@@ -14,6 +10,14 @@ public class Album {
 	Artist artist;
 	String picture;
 	
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
+
 	public Long getId() {
 		return id;
 	}
