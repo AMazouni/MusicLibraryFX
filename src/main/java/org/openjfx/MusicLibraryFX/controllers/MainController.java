@@ -191,6 +191,28 @@ public class MainController implements Initializable {
     		   loader2.setController(new PlayerController(SongName));
     		   Parent node2 = loader2.load();
     		   borderPaneRoot.setBottom(node2);
+    		   PlayList playList1 = new PlayList((long) 1, "PlayList1", null);
+    		   PlayList playList2 = new PlayList((long) 1, "PlayList1", null);
+    		   List<PlayList> playLists = new ArrayList<PlayList>();
+    		   playLists.add(playList1);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   FXMLLoader loader4 = new FXMLLoader();
+    		   loader4.setLocation(App.class.getResource("views/PlayLists.fxml"));
+    		   loader4.setController(new PlayListsController(playLists));
+    		   Parent node4 = loader4.load();
+    		   playListTabAnchor.getChildren().add(node4);
+    		   playListTabAnchor.setTopAnchor(node4, 0d);
+    		   playListTabAnchor.setBottomAnchor(node4, 0d);
+    		   playListTabAnchor.setLeftAnchor(node4, 0d);
+    		   playListTabAnchor.setRightAnchor(node4, 0d);
+    		   initAlbumList();
     		   
     		   
     		  
@@ -199,5 +221,7 @@ public class MainController implements Initializable {
     	}
 		
 	}
+    
+   
 
 }

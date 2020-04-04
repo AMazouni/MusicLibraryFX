@@ -8,6 +8,7 @@ import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class AlbumController  implements Initializable{
@@ -32,5 +33,7 @@ public class AlbumController  implements Initializable{
 		// TODO Auto-generated method stub
 		albumName.setText(album.getLibelle());
 		artistName.setText(album.getArtist().getName());
+		Image image = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\"+ album.getArtist().getName() + ".jpg");
+		albumImage.setImage(image);
 	}
 }
