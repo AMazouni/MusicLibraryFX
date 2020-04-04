@@ -33,7 +33,7 @@ public class AlbumController  implements Initializable{
 		// TODO Auto-generated method stub
 		albumName.setText(album.getLibelle());
 		artistName.setText(album.getArtist().getName());
-		Image image = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\"+ album.getArtist().getName() + ".jpg");
+		Image image = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\"+ album.getPicture());
 		albumImage.setImage(image);
 	}
 }

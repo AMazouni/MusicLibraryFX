@@ -48,7 +48,7 @@ public class ArtistSoloDeployementController implements Initializable {
 			for (Artist artist : artists) {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(App.class.getResource("views/ArtistSolo.fxml"));
-				loader.setController(new ArtistSoloController(artist.getName()));
+				loader.setController(new ArtistSoloController(artist));
 				Parent node = loader.load();
 				artistsFlowPane.setHgap(30);
 				artistsFlowPane.setVgap(30);

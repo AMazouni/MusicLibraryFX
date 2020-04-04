@@ -77,7 +77,7 @@ public class SongListController implements Initializable {
  		   FXMLLoader loader = new FXMLLoader();
 
  		   loader.setLocation( App.class.getResource("views/SongRow.fxml"));
- 		   loader.setController(new SongRowController(song.getLibelle(), song.getArtist().getName(), song.getAlbum().getLibelle(), "ROCK"));
+ 		   loader.setController(new SongRowController(song.getLibelle(), song.getArtist().getName(), song.getAlbum().getLibelle(), song.getGenre().getLibelle()));
  		  
  		   Parent node = loader.load();
  		   songsVBox.getChildren().add(node);
