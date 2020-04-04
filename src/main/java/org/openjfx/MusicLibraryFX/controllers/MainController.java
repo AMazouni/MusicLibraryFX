@@ -129,6 +129,28 @@ public class MainController implements Initializable {
     		   loader2.setController(new PlayerController(SongName));
     		   Parent node2 = loader2.load();
     		   borderPaneRoot.setBottom(node2);
+    		   PlayList playList1 = new PlayList((long) 1, "PlayList1", null);
+    		   PlayList playList2 = new PlayList((long) 1, "PlayList1", null);
+    		   List<PlayList> playLists = new ArrayList<PlayList>();
+    		   playLists.add(playList1);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   playLists.add(playList2);
+    		   FXMLLoader loader4 = new FXMLLoader();
+    		   loader4.setLocation(App.class.getResource("views/PlayLists.fxml"));
+    		   loader4.setController(new PlayListsController(playLists));
+    		   Parent node4 = loader4.load();
+    		   playListTabAnchor.getChildren().add(node4);
+    		   playListTabAnchor.setTopAnchor(node4, 0d);
+    		   playListTabAnchor.setBottomAnchor(node4, 0d);
+    		   playListTabAnchor.setLeftAnchor(node4, 0d);
+    		   playListTabAnchor.setRightAnchor(node4, 0d);
+    		   initAlbumList();
     		   
     		   
     		  
@@ -145,9 +167,28 @@ public class MainController implements Initializable {
 		   Artist artist2 = new Artist((long) 2, "arctic monkeys", null, null, null);
  		   Album album1 = new Album((long) 1, "album1", null, null, artist1);
  		   Album album2 = new Album((long) 2, "album2", null, null, artist2);
+ 		   Album album3 = new Album((long) 2, "album2", null, null, artist2);
+ 		   Album album4 = new Album((long) 2, "album2", null, null, artist2);
+ 		   Album album5 = new Album((long) 2, "album2", null, null, artist2);
+ 		   Album album6 = new Album((long) 2, "album2", null, null, artist2);
+ 		   Album album7 = new Album((long) 2, "album2", null, null, artist2);
+ 		   Album album8 = new Album((long) 2, "album2", null, null, artist2);
  		   List<Album> listOfAlbums = new ArrayList<Album>();
  		   listOfAlbums.add(album1);
  		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album3);
+ 		   listOfAlbums.add(album4);
+ 		   listOfAlbums.add(album5);
+ 		   listOfAlbums.add(album6);
+ 		   listOfAlbums.add(album7);
+ 		   listOfAlbums.add(album8);
+ 		   listOfAlbums.add(album8);
+ 		   listOfAlbums.add(album8);
+ 		   listOfAlbums.add(album8);
+ 		   listOfAlbums.add(album8);
+ 		   listOfAlbums.add(album8);
+ 		   listOfAlbums.add(album8);
+ 		   listOfAlbums.add(album8);
  		   loader.setLocation( App.class.getResource("views/AlbumList.fxml"));
  		   loader.setController(new AlbumsListController(listOfAlbums));
  		   Parent node = loader.load();

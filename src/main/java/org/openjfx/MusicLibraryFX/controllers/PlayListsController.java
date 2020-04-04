@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import org.openjfx.MusicLibraryFX.App;
-import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
+import org.openjfx.MusicLibraryFX.retrofit.beans.PlayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,49 +17,48 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 
-public class AlbumsListController implements Initializable {
-	
-	    private List<Album> listAlbum;
-	    
+public class PlayListsController implements Initializable{
 	    @FXML
-	    private StackPane stackpaneAlbums;
+	    private StackPane stackpanePlayLists;
 
 	    @FXML
-	    private ScrollPane scrollPaneAlbums;
+	    private ScrollPane scrollPanePlayLists;
 
 	    @FXML
-	    private FlowPane albumsFlowPane;
+	    private FlowPane playListFlowPane;
 
 	    @FXML
 	    private Button reloadButton;
 
-	    public AlbumsListController(List<Album> listAlbum) {
-			this.listAlbum=listAlbum;
-		}
-
-		@FXML
+	    @FXML
 	    void reloadSongList(ActionEvent event) {
 
 	    }
+	    
+	    List<PlayList> playLists;
+	    
+	    public PlayListsController(List<PlayList> playLists) {
+			// TODO Auto-generated constructor stub
+	    	this.playLists = playLists;
+		}
 
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			// TODO Auto-generated method stub
 			try {
-			for (Album album : listAlbum) {
+			for (PlayList playList : playLists) {
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(App.class.getResource("views/Album.fxml"));
-				loader.setController(new AlbumController(album));
+				loader.setLocation(App.class.getResource("views/PlayListSolo.fxml"));
+				loader.setController(new PlayListSoloController(playList));
 				Parent node = loader.load();
-				albumsFlowPane.setHgap(30);
-				albumsFlowPane.setVgap(30);
-				albumsFlowPane.getChildren().add(node);
+				playListFlowPane.setHgap(30);
+				playListFlowPane.setVgap(30);
+				playListFlowPane.getChildren().add(node);
 			}
 			} catch (Exception e) {
 				// TODO: handle exception
 				e.getStackTrace();
 			}
 		}
-		
-		
+	    
 }

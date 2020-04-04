@@ -5,21 +5,25 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="223.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="164.0" prefWidth="116.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="albumImage" fitHeight="169.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="albumImage" fitHeight="118.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../UIImages/GenericPlayListIcon.JPG" />
          </image></ImageView>
-      <Label fx:id="albumName" prefHeight="52.0" prefWidth="386.0" text="Album Name">
+      <Label fx:id="albumName" prefHeight="34.0" prefWidth="186.0" text="Album Name">
          <padding>
-            <Insets left="80.0" />
+            <Insets left="10.0" />
          </padding>
+         <font>
+            <Font size="14.0" />
+         </font>
       </Label>
-      <Label fx:id="artistName" layoutX="10.0" layoutY="180.0" prefHeight="52.0" prefWidth="383.0" text="Artist Name">
+      <Label fx:id="artistName" layoutX="10.0" layoutY="180.0" prefHeight="33.0" prefWidth="186.0" text="Artist Name">
          <padding>
-            <Insets left="80.0" />
+            <Insets left="15.0" />
          </padding>
       </Label>
    </children>
