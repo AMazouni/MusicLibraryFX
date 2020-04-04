@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 
 public class PlayListSoloController implements Initializable{
 	@FXML
@@ -17,6 +18,9 @@ public class PlayListSoloController implements Initializable{
 
     @FXML
     private Label playListName;
+    
+    @FXML
+    private VBox playListVbox;
     
     private PlayList playList;
     
@@ -30,6 +34,10 @@ public class PlayListSoloController implements Initializable{
 		// TODO Auto-generated method stub
 		playListName.setText(playList.getLibelle());
 		playListImage.setImage(new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\"+ "arctic monkeys" + ".jpg"));
+	}
+	
+	public void ClickOnPlayList () {
+		
 	}
     
 }

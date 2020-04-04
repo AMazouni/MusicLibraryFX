@@ -13,9 +13,6 @@ public class Artist {
 	 @JsonProperty("name")
 	String name;
 	String portrait;
-	
-	List<Album> albums = new ArrayList<Album>();
-	List<Song> songs = new ArrayList<Song>();
 	public Long getId() {
 		return id;
 	}
@@ -34,25 +31,12 @@ public class Artist {
 	public void setPortrait(String portrait) {
 		this.portrait = portrait;
 	}
-	public List<Album> getAlbums() {
-		return albums;
-	}
-	public void setAlbums(List<Album> albums) {
-		this.albums = albums;
-	}
-	public List<Song> getSongs() {
-		return songs;
-	}
-	public void setSongs(List<Song> songs) {
-		this.songs = songs;
-	}
-	public Artist(Long id, String name, String portrait, List<Album> albums, List<Song> songs) {
+	
+	public Artist(Long id, String name, String portrait) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.portrait = portrait;
-		this.albums = albums;
-		this.songs = songs;
 	}
 	public Artist() {
 		super();

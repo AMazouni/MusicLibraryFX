@@ -14,8 +14,6 @@ public class Album {
 	Artist artist;
 	String picture;
 	
-	List<Song> songs = new ArrayList<Song>();
-	
 	public Long getId() {
 		return id;
 	}
@@ -40,14 +38,6 @@ public class Album {
 		this.releaseDate = releaseDate;
 	}
 
-	public List<Song> getSongs() {
-		return songs;
-	}
-
-	public void setSongs(List<Song> songs) {
-		this.songs = songs;
-	}
-
 	public Artist getArtist() {
 		return artist;
 	}
@@ -56,13 +46,13 @@ public class Album {
 		this.artist = artist;
 	}
 
-	public Album(Long id, String libelle, Date releaseDate, List<Song> songs, Artist artist) {
+	public Album(Long id, String libelle, Date releaseDate, Artist artist, String picture) {
 		super();
 		this.id = id;
 		this.libelle = libelle;
 		this.releaseDate = releaseDate;
-		this.songs = songs;
 		this.artist = artist;
+		this.picture = picture;
 	}
 
 	public Album() {

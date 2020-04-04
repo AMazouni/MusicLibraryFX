@@ -76,43 +76,30 @@ public class MainController implements Initializable {
     @FXML
     private FlowPane flowPane;
     
+    public void initPlayer () {
+    	try {
+    	   FXMLLoader loader = new FXMLLoader();
+		   loader.setLocation( App.class.getResource("views/Player.fxml"));
+		   loader.setController(new PlayerController("arctic monkeys"));
+		   Parent node = loader.load();
+		   borderPaneRoot.setBottom(node);
+    	} catch (Exception e) {
+			// TODO: handle exception
+    		e.getStackTrace();
+		}
+    }
+    
     public void initAlbumList() {
        	try {
  		   FXMLLoader loader = new FXMLLoader();
- 		   Artist artist1 = new Artist((long) 1, "arctic monkeys", null, null, null);
-		   Artist artist2 = new Artist((long) 2, "arctic monkeys", null, null, null);
- 		   Album album1 = new Album((long) 1, "album1", null, null, artist1);
- 		   Album album2 = new Album((long) 2, "album2", null, null, artist2);
- 		   List<Album> listOfAlbums = new ArrayList<Album>();
- 		   listOfAlbums.add(album1);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
- 		   listOfAlbums.add(album2);
  		   loader.setLocation( App.class.getResource("views/AlbumList.fxml"));
- 		   loader.setController(new AlbumsListController(listOfAlbums));
+ 		   loader.setController(new AlbumsListController(listAlbum));
  		   Parent node = loader.load();
  		   albumTabAnchor.getChildren().add(node);
  		   albumTabAnchor.setTopAnchor(node, 0d);
  		   albumTabAnchor.setBottomAnchor(node, 0d);
  		   albumTabAnchor.setRightAnchor(node, 0d);
- 		   albumTabAnchor.setLeftAnchor(node, 0d);
- 		
- 		   
- 		
- 		   FXMLLoader loader2 = new FXMLLoader();
- 		   loader2.setLocation( App.class.getResource("views/Player.fxml"));
- 		   Parent node2 = loader2.load();
- 		   
- 		   borderPaneRoot.setBottom(node2);
- 		   
- 		  
+ 		   albumTabAnchor.setLeftAnchor(node, 0d);	  
  	} catch (IOException e) {
  		e.printStackTrace();
  	}
@@ -121,36 +108,62 @@ public class MainController implements Initializable {
     public void initSongList() {
        	try {
  		   FXMLLoader loader = new FXMLLoader();
-
  		   loader.setLocation( App.class.getResource("views/SongList.fxml"));
  		   loader.setController(new SongListController(listSongs));
- 		  
  		   Parent node = loader.load();
- 		  songTabAnchor.getChildren().add(node);
+ 		   songTabAnchor.getChildren().add(node);
  		   songTabAnchor.setTopAnchor(node, 0d);
  		   songTabAnchor.setBottomAnchor(node, 0d);
  		   songTabAnchor.setRightAnchor(node, 0d);
- 		   songTabAnchor.setLeftAnchor(node, 0d);
- 		
- 		   
- 		
- 		   FXMLLoader loader2 = new FXMLLoader();
- 		   loader2.setLocation( App.class.getResource("views/Player.fxml"));
- 		   Parent node2 = loader2.load();
- 		   
- 		   borderPaneRoot.setBottom(node2);
- 		   
- 		  
+ 		   songTabAnchor.setLeftAnchor(node, 0d);    
  	} catch (IOException e) {
  		e.printStackTrace();
  	}
+    }
+    
+    public void initArtistList () {
+    	try {
+    	   FXMLLoader loader = new FXMLLoader();
+		   loader.setLocation( App.class.getResource("views/ArtistSoloDeployement.fxml"));
+		   loader.setController(new ArtistSoloDeployementController(listArtist));
+		   Parent node3 = loader.load();
+		   artistsTabAnchor.getChildren().add(node3);
+		   artistsTabAnchor.setTopAnchor(node3, 0d);
+		   artistsTabAnchor.setBottomAnchor(node3, 0d);
+		   artistsTabAnchor.setLeftAnchor(node3, 0d);
+		   artistsTabAnchor.setRightAnchor(node3, 0d);
+    	} catch (Exception e) {
+			// TODO: handle exception
+    		e.getStackTrace();
+		}
+    }
+    
+    public void initPlayList () {
+    	try {
+    	   FXMLLoader loader = new FXMLLoader();
+ 		   loader.setLocation(App.class.getResource("views/PlayLists.fxml"));
+ 		   loader.setController(new PlayListsController(listPlayList));
+ 		   Parent node4 = loader.load();
+ 		   playListTabAnchor.getChildren().add(node4);
+ 		   playListTabAnchor.setTopAnchor(node4, 0d);
+ 		   playListTabAnchor.setBottomAnchor(node4, 0d);
+ 		   playListTabAnchor.setLeftAnchor(node4, 0d);
+ 		   playListTabAnchor.setRightAnchor(node4, 0d);
+    		
+    	} catch (Exception e) {
+			// TODO: handle exception
+    		e.getStackTrace();
+		}
     }
 
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
     	try { initAlbumList();
     	      initSongList();
-    		   FXMLLoader loader = new FXMLLoader();
+    	      initArtistList();
+    	      initPlayer();
+    	      initPlayList();
+    		/*   FXMLLoader loader = new FXMLLoader();
 
     		   loader.setLocation( App.class.getResource("views/SongList.fxml"));
     		   loader.setController(new SongListController(listSongs));
@@ -220,12 +233,8 @@ public class MainController implements Initializable {
     		   playListTabAnchor.setTopAnchor(node4, 0d);
     		   playListTabAnchor.setBottomAnchor(node4, 0d);
     		   playListTabAnchor.setLeftAnchor(node4, 0d);
-    		   playListTabAnchor.setRightAnchor(node4, 0d);
-    		   initAlbumList();
-    		   
-    		   
-    		  
-    	} catch (IOException e) {
+    		   playListTabAnchor.setRightAnchor(node4, 0d); */
+    	} catch (Exception e) {
     		e.printStackTrace();
     	}
 		

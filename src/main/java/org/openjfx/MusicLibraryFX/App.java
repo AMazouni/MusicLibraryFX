@@ -10,6 +10,10 @@ import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
 import org.openjfx.MusicLibraryFX.retrofit.beans.Artist;
 import org.openjfx.MusicLibraryFX.retrofit.beans.PlayList;
 import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
+import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.AlbumServiceImpl;
+import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.ArtistServiceImpl;
+import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.PlayListServiceImpl;
+import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.SongServiceImpl;
 
 import com.gluonhq.charm.glisten.visual.Theme;
 
@@ -30,7 +34,7 @@ public class App extends Application {
 	public void start(Stage stage) throws IOException {
 
 	      
-	      List<Song> listSongs = new ArrayList<Song>();
+	    /*  List<Song> listSongs = new ArrayList<Song>();
 	      List<Album> listAlbum = new ArrayList<Album>();
 	      List<PlayList> listPlaylist = new ArrayList<PlayList>();
 	      List<Artist> listArtist = new ArrayList<Artist>();
@@ -39,14 +43,18 @@ public class App extends Application {
 	      artist1.setId(id);
 	      artist1.setName("Artist1");
 	      Album album1= new Album(id,"Album",new Date(),listSongs,artist1);
-	
-
-	      String SongName = "MP3Test";
-		FXMLLoader loader = new FXMLLoader();
-
+	      String SongName = "MP3Test"; */
+		   SongServiceImpl songServiceImpl = new SongServiceImpl();
+		   AlbumServiceImpl albumServiceImpl = new AlbumServiceImpl();
+		   PlayListServiceImpl playListServiceImpl = new PlayListServiceImpl();
+		   ArtistServiceImpl artistServiceImpl = new ArtistServiceImpl();
+		   List<Artist> listArtist = artistServiceImpl.findAll();
+		   List <PlayList> listPlayList = playListServiceImpl.findAll();
+		   List<Album> listAlbum = albumServiceImpl.findAll();
+		   List <Song> listSongs = songServiceImpl.findAll();
+		   FXMLLoader loader = new FXMLLoader();
 		   loader.setLocation( App.class.getResource("views/Main.fxml"));
-		   loader.setController(new MainController(listSongs,listAlbum,listPlaylist,listArtist,SongName));
-		  
+		   loader.setController(new MainController(listSongs,listAlbum,listPlayList,listArtist,"arctic monkeys"));
 		   Parent root = loader.load();
 		
 		   
