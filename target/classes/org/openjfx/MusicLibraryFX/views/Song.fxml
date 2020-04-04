@@ -9,27 +9,27 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.3385939741750359" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <items>
-      <VBox prefHeight="398.0" prefWidth="206.0">
+      <VBox prefHeight="297.0" prefWidth="227.0">
          <children>
-            <ImageView fitHeight="182.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="songName" prefHeight="42.0" prefWidth="236.0" text="Song name">
+            <ImageView fitHeight="182.0" fitWidth="229.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="songName" prefHeight="29.0" prefWidth="234.0" text="Song name">
                <padding>
                   <Insets left="80.0" />
                </padding>
             </Label>
-            <Label layoutX="10.0" layoutY="192.0" prefHeight="42.0" prefWidth="236.0" text="Artist : artistName ">
+            <Label fx:id="artistName" layoutX="10.0" layoutY="192.0" prefHeight="42.0" prefWidth="236.0" text="Artist : artistName ">
                <padding>
                   <Insets left="70.0" />
                </padding>
             </Label>
-            <Label layoutX="10.0" layoutY="235.0" prefHeight="42.0" prefWidth="236.0" text="Genre : GenreName">
+            <Label fx:id="genreName" layoutX="10.0" layoutY="235.0" prefHeight="42.0" prefWidth="236.0" text="Genre : GenreName">
                <padding>
                   <Insets left="70.0" />
                </padding>
             </Label>
-            <Label layoutX="10.0" layoutY="277.0" prefHeight="42.0" prefWidth="236.0" text="Release date : releaseDate">
+            <Label fx:id="releaseDate" layoutX="10.0" layoutY="277.0" prefHeight="42.0" prefWidth="236.0" text="Release date : releaseDate">
                <padding>
                   <Insets left="50.0" />
                </padding>
@@ -38,7 +38,7 @@
       </VBox>
       <ScrollPane prefHeight="200.0" prefWidth="200.0">
          <content>
-            <VBox prefHeight="384.0" prefWidth="287.0">
+            <VBox prefHeight="290.0" prefWidth="456.0">
                <children>
                   <Label prefHeight="41.0" prefWidth="287.0" text="Lyrics :">
                      <font>
@@ -48,7 +48,7 @@
                         <Insets left="10.0" />
                      </padding>
                   </Label>
-                  <TextField editable="false" prefHeight="338.0" prefWidth="287.0" />
+                  <TextField fx:id="lyrics" editable="false" prefHeight="250.0" prefWidth="440.0" />
                </children>
             </VBox>
          </content>

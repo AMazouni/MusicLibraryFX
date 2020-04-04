@@ -8,7 +8,7 @@
 <HBox fx:id="songRow" alignment="BASELINE_LEFT" fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="songButton" mnemonicParsing="false" onAction="#SongButtonClick" text="Button" />
-      <Label fx:id="songLabel" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Label" HBox.hgrow="ALWAYS">
+      <Label fx:id="songLabel" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#OnClick" text="Label" HBox.hgrow="ALWAYS">
          <padding>
             <Insets left="50.0" right="50.0" />
          </padding>

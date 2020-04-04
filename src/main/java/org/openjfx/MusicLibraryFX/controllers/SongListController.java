@@ -77,7 +77,7 @@ public class SongListController implements Initializable {
  		   FXMLLoader loader = new FXMLLoader();
 
  		   loader.setLocation( App.class.getResource("views/SongRow.fxml"));
- 		   loader.setController(new SongRowController(song.getLibelle(), song.getArtist().getName(), song.getAlbum().getLibelle(), song.getGenre().getLibelle()));
+ 		   loader.setController(new SongRowController(song,this));
  		  
  		   Parent node = loader.load();
  		   songsVBox.getChildren().add(node);
@@ -88,4 +88,45 @@ public class SongListController implements Initializable {
  	}
 		
 	}
+
+	public List<Song> getListSong() {
+		return listSong;
+	}
+
+	public void setListSong(List<Song> listSong) {
+		this.listSong = listSong;
+	}
+
+	public StackPane getStackpaneSongList() {
+		return stackpaneSongList;
+	}
+
+	public void setStackpaneSongList(StackPane stackpaneSongList) {
+		this.stackpaneSongList = stackpaneSongList;
+	}
+
+	public ScrollPane getScrollPaneSongList() {
+		return scrollPaneSongList;
+	}
+
+	public void setScrollPaneSongList(ScrollPane scrollPaneSongList) {
+		this.scrollPaneSongList = scrollPaneSongList;
+	}
+
+	public VBox getSongsVBox() {
+		return songsVBox;
+	}
+
+	public void setSongsVBox(VBox songsVBox) {
+		this.songsVBox = songsVBox;
+	}
+
+	public Button getReloadButton() {
+		return reloadButton;
+	}
+
+	public void setReloadButton(Button reloadButton) {
+		this.reloadButton = reloadButton;
+	}
+	
 }
