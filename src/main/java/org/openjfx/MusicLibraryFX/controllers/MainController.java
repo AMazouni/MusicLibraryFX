@@ -86,6 +86,15 @@ public class MainController implements Initializable {
  		   List<Album> listOfAlbums = new ArrayList<Album>();
  		   listOfAlbums.add(album1);
  		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
+ 		   listOfAlbums.add(album2);
  		   loader.setLocation( App.class.getResource("views/AlbumList.fxml"));
  		   loader.setController(new AlbumsListController(listOfAlbums));
  		   Parent node = loader.load();
