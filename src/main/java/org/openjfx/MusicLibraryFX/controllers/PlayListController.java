@@ -82,12 +82,6 @@ public class PlayListController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		playListImage.setImage(new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\" + "GenericPlayListIcon.JPG"));
-		Image add = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\" + "add.png");
-		Image edit = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\" + "edit2.JPG");
-		Image delete = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\" + "delete.JPG");
-		addImage.setImage(add);
-		renameImage.setImage(edit);
-		deleteImage.setImage(delete);
 		playListName.setText(playList.getLibelle());
 
 			try {PlayListServiceImpl playListServiceImpl = new PlayListServiceImpl();
@@ -101,7 +95,11 @@ public class PlayListController implements Initializable{
 		loader.setController(new SongListController(songs));
 		Parent node = loader.load();
 		anchorPane.getChildren().add(node);
-		} catch (Exception e) {
+		anchorPane.setBottomAnchor(node, 0d);
+		anchorPane.setTopAnchor(node, 0d);
+		anchorPane.setLeftAnchor(node, 0d);
+		anchorPane.setRightAnchor(node, 0d);
+		} catch (IOException e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
