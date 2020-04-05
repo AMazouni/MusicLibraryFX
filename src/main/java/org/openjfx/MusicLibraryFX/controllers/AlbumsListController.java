@@ -50,7 +50,7 @@ public class AlbumsListController implements Initializable {
 			for (Album album : listAlbum) {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(App.class.getResource("views/Album.fxml"));
-				loader.setController(new AlbumController(album));
+				loader.setController(new AlbumController(album,this));
 				Parent node = loader.load();
 				albumsFlowPane.setHgap(30);
 				albumsFlowPane.setVgap(30);
@@ -60,6 +60,46 @@ public class AlbumsListController implements Initializable {
 				// TODO: handle exception
 				e.getStackTrace();
 			}
+		}
+
+		public List<Album> getListAlbum() {
+			return listAlbum;
+		}
+
+		public void setListAlbum(List<Album> listAlbum) {
+			this.listAlbum = listAlbum;
+		}
+
+		public StackPane getStackpaneAlbums() {
+			return stackpaneAlbums;
+		}
+
+		public void setStackpaneAlbums(StackPane stackpaneAlbums) {
+			this.stackpaneAlbums = stackpaneAlbums;
+		}
+
+		public ScrollPane getScrollPaneAlbums() {
+			return scrollPaneAlbums;
+		}
+
+		public void setScrollPaneAlbums(ScrollPane scrollPaneAlbums) {
+			this.scrollPaneAlbums = scrollPaneAlbums;
+		}
+
+		public FlowPane getAlbumsFlowPane() {
+			return albumsFlowPane;
+		}
+
+		public void setAlbumsFlowPane(FlowPane albumsFlowPane) {
+			this.albumsFlowPane = albumsFlowPane;
+		}
+
+		public Button getReloadButton() {
+			return reloadButton;
+		}
+
+		public void setReloadButton(Button reloadButton) {
+			this.reloadButton = reloadButton;
 		}
 		
 		

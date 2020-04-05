@@ -75,12 +75,13 @@ public class MainController implements Initializable {
     
     @FXML
     private FlowPane flowPane;
-    
+    public static PlayerController player;
     public void initPlayer () {
     	try {
     	   FXMLLoader loader = new FXMLLoader();
 		   loader.setLocation( App.class.getResource("views/Player.fxml"));
-		   loader.setController(new PlayerController("arctic monkeys"));
+		   player=new PlayerController("arctic monkeys");	
+		   loader.setController(player);
 		   Parent node = loader.load();
 		   borderPaneRoot.setBottom(node);
     	} catch (Exception e) {

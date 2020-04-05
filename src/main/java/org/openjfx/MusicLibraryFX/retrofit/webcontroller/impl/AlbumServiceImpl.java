@@ -3,9 +3,12 @@ package org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl;
 import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+
 import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 import org.openjfx.MusicLibraryFX.retrofit.repositories.AlbumRepo;
 import org.openjfx.MusicLibraryFX.retrofit.webcontroller.fascade.AlbumService;
+
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
@@ -78,5 +81,17 @@ public class AlbumServiceImpl implements AlbumService {
 		List<Album> albums = repos.execute().body();
 		return albums;
 	}
+	@Override
+	public List<Song> ListSongsById(Long id) throws IOException {
+		Call<List<Song>> repos = service.ListSongsById(id);
+		List<Song> songs = repos.execute().body();
+		return songs;
+	}
 
+	@Override
+	public List<Song> ListSongsByLibelle(String Libelle) throws IOException {
+		Call<List<Song>> repos = service.ListSongsByLibelle(Libelle);
+		List<Song> songs = repos.execute().body();
+		return songs;
+	}
 }

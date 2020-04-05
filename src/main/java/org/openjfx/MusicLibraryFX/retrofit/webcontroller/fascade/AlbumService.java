@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 
 public interface AlbumService {
 	public List<Album> findAll() throws IOException;
@@ -24,4 +25,8 @@ public interface AlbumService {
 	public List<Album> findByReleaseDate(Date releaseDate) throws IOException;
 
 	public List<Album> findByArtistId(Long id) throws IOException;
+
+	List<Song> ListSongsById(Long id) throws IOException;
+
+	List<Song> ListSongsByLibelle(String Libelle) throws IOException;
 }
