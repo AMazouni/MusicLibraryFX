@@ -27,8 +27,8 @@ public interface PlayListRepo {
 	Call<Integer> save(@Body PlayList playList);
 	@GET("findByLibelle/Libelle/{libelle}")
 	Call<PlayList> findByLibelle(@Path("libelle") String libelle);
-	@GET("/findByLibelle/Libelle/{libelle}/ListSongs")
+	@GET("findByLibelle/Libelle/{libelle}/ListSongs")
 	Call<List<Song>> ListSongsByLibelle(@Path("libelle") String libelle);
-	@GET("/findByLibelle/Id/{Id}/ListSongs")
+	@GET("findByLibelle/Id/{Id}/ListSongs")
 	Call<List<Song>> ListSongsById(@Path("Id") Long  Id);
 }
