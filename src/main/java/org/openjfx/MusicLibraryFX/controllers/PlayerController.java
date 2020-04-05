@@ -140,7 +140,6 @@ public class PlayerController extends StreamPlayer implements Initializable,Stre
 	public void progress(int nEncodedBytes, long microsecondPosition, byte[] pcmData, Map<String, Object> properties) {
 		// TODO Auto-generated method stub
     Platform.runLater(()->setPosition(Long.toString(microsecondPosition/60000000l-((microsecondPosition/6000000000l)*100))+":"+Long.toString(microsecondPosition/1000000l-((microsecondPosition/100000000l)*100))));
-	System.out.println(this.Position);
 	
 
 	}
