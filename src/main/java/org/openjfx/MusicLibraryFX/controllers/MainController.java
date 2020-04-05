@@ -25,7 +25,7 @@ import javafx.scene.layout.FlowPane;
 public class MainController implements Initializable {
  private List<Song> listSongs;
  private List<Album> listAlbum;
- private List<PlayList> listPlayList;
+// private List<PlayList> listPlayList;
  private List<Artist> listArtist;
  String SongName;
  
@@ -35,7 +35,7 @@ public class MainController implements Initializable {
 	super();
 	this.listSongs = listSongs;
 	this.listAlbum = listAlbum;
-	this.listPlayList = listPlayList;
+	//this.listPlayList = listPlayList;
 	this.listArtist = listArtist;
 	this.SongName = SongName;
 }
@@ -58,8 +58,8 @@ public class MainController implements Initializable {
     @FXML
     private Tab AlbumTab;
 
-    @FXML
-    private Tab playListsTab;
+   // @FXML
+   // private Tab playListsTab;
 
     @FXML
     private Tab artistsTab;
@@ -67,8 +67,8 @@ public class MainController implements Initializable {
     @FXML
     private AnchorPane artistsTabAnchor;
     
-    @FXML
-    private AnchorPane playListTabAnchor;
+   // @FXML
+   // private AnchorPane playListTabAnchor;
 
     @FXML
     private AnchorPane albumTabAnchor;
@@ -139,7 +139,7 @@ public class MainController implements Initializable {
 		}
     }
     
-    public void initPlayList () {
+ /*   public void initPlayList () {
     	try {
     	   FXMLLoader loader = new FXMLLoader();
  		   loader.setLocation(App.class.getResource("views/PlayLists.fxml"));
@@ -155,7 +155,7 @@ public class MainController implements Initializable {
 			// TODO: handle exception
     		e.getStackTrace();
 		}
-    }
+    } */
 
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -163,7 +163,7 @@ public class MainController implements Initializable {
     	      initSongList();
     	      initArtistList();
     	      initPlayer();
-    	      initPlayList();
+    	     // initPlayList();
     		/*   FXMLLoader loader = new FXMLLoader();
 
     		   loader.setLocation( App.class.getResource("views/SongList.fxml"));

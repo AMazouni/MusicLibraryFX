@@ -22,11 +22,6 @@
                   <AnchorPane fx:id="albumTabAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
-            <Tab fx:id="playListsTab" text="PlayLists">
-               <content>
-                  <AnchorPane fx:id="playListTabAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-            </Tab>
             <Tab fx:id="artistsTab" text="Artists">
                <content>
                   <AnchorPane fx:id="artistsTabAnchor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
