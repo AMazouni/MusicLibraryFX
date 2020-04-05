@@ -89,17 +89,19 @@ public class PlayListController implements Initializable{
 		renameImage.setImage(edit);
 		deleteImage.setImage(delete);
 		playListName.setText(playList.getLibelle());
-		PlayListServiceImpl playListServiceImpl = new PlayListServiceImpl();
-		try {
+
+			try {PlayListServiceImpl playListServiceImpl = new PlayListServiceImpl();
+		
 		System.out.println(playList.getLibelle());
-		List<Song> songs = playListServiceImpl.ListSongsByLibelle(playList.getLibelle());
+		List<Song> songs = playListServiceImpl.ListSongsByLibelle(playList.getLibelle()); 
+		
 		System.out.println(songs);
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(App.class.getResource("views/SongList.fxml"));
 		loader.setController(new SongListController(songs));
 		Parent node = loader.load();
 		anchorPane.getChildren().add(node);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}

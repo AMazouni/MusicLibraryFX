@@ -62,17 +62,17 @@
                   </HBox>
                   <HBox prefHeight="100.0" prefWidth="418.0">
                      <children>
-                        <Button fx:id="backwardButton" mnemonicParsing="false" prefHeight="41.0" prefWidth="52.0" text="&lt;">
+                        <Button fx:id="backwardButton" mnemonicParsing="false" onAction="#seekBackwardAction" prefHeight="41.0" prefWidth="52.0" text="&lt;">
                            <HBox.margin>
                               <Insets left="120.0" top="20.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="playButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="87.0" text="play">
+                        <Button fx:id="playButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#playAction" prefHeight="68.0" prefWidth="87.0" text="play">
                            <HBox.margin>
                               <Insets top="10.0" />
                            </HBox.margin>
                         </Button>
-                        <Button fx:id="forwardButton" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="52.0" text="&gt;">
+                        <Button fx:id="forwardButton" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#seekForwardAction" prefHeight="40.0" prefWidth="52.0" text="&gt;">
                            <HBox.margin>
                               <Insets top="20.0" />
                            </HBox.margin>
