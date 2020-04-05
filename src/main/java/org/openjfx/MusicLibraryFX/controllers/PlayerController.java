@@ -62,6 +62,15 @@ public class PlayerController extends StreamPlayer implements Initializable, Str
 		try {
 			addStreamPlayerListener(this);
 			stop();
+			reset();
+			songImage.setImage(
+					new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\" + song.getAlbum().getPicture()));
+			artistNameLabel.setText(song.getArtist().getName());
+			songNameLabel.setText(song.getLibelle());
+			FinalTimerLabel.setText(Integer.toString(this.getDurationInSeconds() / 60) + ":"
+					+ Integer.toString(this.getDurationInSeconds() % 60));
+			InitialTimerLabel.setText("00:00");
+			ProgressBar.setProgress(0d);
 			open(new File(System.getProperty("user.dir") + "\\Songs\\" + song.getSongPath()));
 			play();
 
@@ -102,9 +111,10 @@ public class PlayerController extends StreamPlayer implements Initializable, Str
 				new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\" + song.getAlbum().getPicture()));
 		artistNameLabel.setText(song.getArtist().getName());
 		songNameLabel.setText(song.getLibelle());
-		FinalTimerLabel.setText(Integer.toString(this.getDurationInSeconds() / 60) + "::"
+		FinalTimerLabel.setText(Integer.toString(this.getDurationInSeconds() / 60) + ":"
 				+ Integer.toString(this.getDurationInSeconds() % 60));
 		InitialTimerLabel.setText("00:00");
+		ProgressBar.setProgress(0d);
 
 	}
     Long SeekValue = 0l;

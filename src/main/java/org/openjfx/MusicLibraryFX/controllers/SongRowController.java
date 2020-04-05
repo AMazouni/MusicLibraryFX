@@ -40,7 +40,7 @@ public class SongRowController implements Initializable {
 
     @FXML
     void SongButtonClick(ActionEvent event) {
-
+    MainController.player.setSong(song);
     }
     
     @Override
@@ -50,6 +50,8 @@ public class SongRowController implements Initializable {
     	songArtist.setText(song.getArtist().getName());
     	songAlbum.setText(song.getAlbum().getLibelle());
     	songGenre.setText(song.getGenre().getLibelle());
+    	if(song.getSongPath() != null) songButton.setText("Play");
+    	else songButton.setDisable(true);
 		
 	}
 
