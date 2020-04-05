@@ -11,10 +11,12 @@ import org.openjfx.MusicLibraryFX.retrofit.beans.Album;
 import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.AlbumServiceImpl;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
@@ -37,10 +39,14 @@ import javafx.scene.layout.AnchorPane;
 	   
 	    @FXML
 	    private SplitPane splitPane;
-
+	    
+	    @FXML
+	    private Button exitButton;
+	    
 	    private Album album;
 	    
-	    
+
+	  
 	    
 		public AlbumPageController(Album album) {
 			super();
@@ -75,5 +81,10 @@ import javafx.scene.layout.AnchorPane;
 			}
 			
 		}
+		
+	    @FXML
+	    void exit(ActionEvent event) {
+        this.splitPane.setVisible(false);
+	    }
 
 	}

@@ -5,16 +5,21 @@ import java.util.ResourceBundle;
 
 import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class SongController implements Initializable {
     private Song song;
+
+    @FXML
+    private SplitPane splitPane;
     @FXML
     private Label songName;
 
@@ -30,6 +35,9 @@ public class SongController implements Initializable {
     @FXML
     private TextArea lyrics;
     
+    @FXML
+    private Button exitButton;
+
     @FXML
     private ImageView songAlbumImage;
 	public SongController(Song song) {
@@ -51,4 +59,9 @@ public class SongController implements Initializable {
 		Image image = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\"+ song.getAlbum().getPicture());
 		songAlbumImage.setImage(image);
 	}
+    @FXML
+    void Exit(ActionEvent event) {
+  this.splitPane.setVisible(false);;
+  System.out.println(splitPane);
+    }
 }

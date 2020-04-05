@@ -80,7 +80,7 @@ public class MainController implements Initializable {
     	try {
     	   FXMLLoader loader = new FXMLLoader();
 		   loader.setLocation( App.class.getResource("views/Player.fxml"));
-		   player=new PlayerController("arctic monkeys");	
+		   player=new PlayerController(listSongs.get(0));	
 		   loader.setController(player);
 		   Parent node = loader.load();
 		   borderPaneRoot.setBottom(node);

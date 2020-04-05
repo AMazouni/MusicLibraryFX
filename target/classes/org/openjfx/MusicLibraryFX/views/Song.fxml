@@ -11,15 +11,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.3385939741750359" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.4" prefWidth="822.4" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane fx:id="splitPane" dividerPositions="0.3385939741750359" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="454.4" prefWidth="822.4" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <items>
-      <VBox prefHeight="297.0" prefWidth="227.0">
+      <VBox alignment="TOP_CENTER" prefHeight="297.0" prefWidth="227.0">
          <children>
-            <ImageView fx:id="songAlbumImage" fitHeight="182.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="songName" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="276.0" text="Song name" />
-            <Label fx:id="artistName" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="192.0" prefHeight="42.0" prefWidth="278.0" text="Artist : artistName " />
-            <Label fx:id="genreName" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="42.0" prefWidth="277.0" text="Genre : GenreName" />
-            <Label fx:id="releaseDate" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="277.0" prefHeight="42.0" prefWidth="278.0" text="Release date : releaseDate" />
+            <ImageView fx:id="songAlbumImage" fitHeight="182.0" fitWidth="275.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin></ImageView>
+            <Label fx:id="songName" alignment="CENTER" contentDisplay="CENTER" prefHeight="65.0" prefWidth="275.0" text="Song name">
+               <font>
+                  <Font size="24.0" />
+               </font></Label>
+            <Label fx:id="artistName" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="192.0" prefHeight="18.0" prefWidth="275.0" text="Artist : artistName " />
+            <Label fx:id="genreName" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="235.0" prefHeight="21.0" prefWidth="275.0" text="Genre : GenreName" />
+            <Label fx:id="releaseDate" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="277.0" prefHeight="12.0" prefWidth="275.0" text="Release date : releaseDate" />
          </children>
       </VBox>
       <ScrollPane prefHeight="200.0" prefWidth="200.0">
@@ -36,7 +42,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Button fx:id="exitButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="Exit" />
+                        <Button fx:id="exitButton" mnemonicParsing="false" onAction="#Exit" prefHeight="26.0" prefWidth="54.0" text="Exit" />
                      </children>
                   </HBox>
                   <TextArea fx:id="lyrics" prefHeight="410.0" prefWidth="534.0" />

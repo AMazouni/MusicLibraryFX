@@ -23,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * JavaFX App
@@ -66,39 +67,19 @@ public class App extends Application {
 		   Parent root = loader.load();
 		
 		   
-	/*	Parent root = FXMLLoader.load(getClass().getResource("views/Main.fxml")); */
+	
 	        Scene scene = new Scene(root);
 	  
      
          scene.getStylesheets().setAll(App.class.getResource("views/stylesheet.css").toExternalForm());
 	        scene.setRoot(root);
-	        stage.setResizable(false);
+	        //stage.setResizable(false);
 	        stage.setTitle("FXML Welcome");
 	        stage.setScene(scene);
-
+  
 	        stage.show();}
 
-		/*Init();
-		stage.setTitle("test");
-		Scene scene = new Scene(layout, 600, 300);
-		stage.setScene(scene);
-		stage.show();
 
-		b.setOnAction(e -> {
-			try {
-			//	Call<List<Artist>> repos = service.artist();
-				List<Artist> foundArtists = artistServiceImpl.findAll();
-				for (Artist artiste : foundArtists) {
-
-					artistVbox.getChildren().add(new Label(Long.toString(artiste.getId())));
-					artistVbox.getChildren().add(new Label(artiste.getName()));
-				}
-				layout.setCenter(artistVbox);
-
-			} catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		}); */
 		
 
 	
