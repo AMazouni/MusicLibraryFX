@@ -30,6 +30,7 @@ public class ArtistSoloController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		Image image = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\"+ artist.getPortrait());
+		
 		artistName.setText(artist.getName());
 		circleImage.setFill(new ImagePattern(image));
 	}

@@ -65,6 +65,7 @@ public class SongRowController implements Initializable {
 		loader.setLocation(App.class.getResource("views/Song.fxml"));
 		loader.setController(new SongController(song));
 		Parent node = loader.load();
+		node.prefWidth(songRow.getWidth());
 		songListController.getStackpaneSongList().getChildren().add(node);
 		} catch (Exception e) {
 			// TODO: handle exception

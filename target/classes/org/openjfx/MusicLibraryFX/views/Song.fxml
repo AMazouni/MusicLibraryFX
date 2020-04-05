@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.3385939741750359" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="298.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<SplitPane dividerPositions="0.3385939741750359" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <items>
       <VBox prefHeight="297.0" prefWidth="227.0">
          <children>
-            <ImageView fitHeight="182.0" fitWidth="229.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="songAlbumImage" fitHeight="182.0" fitWidth="229.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="songName" prefHeight="29.0" prefWidth="234.0" text="Song name">
                <padding>
                   <Insets left="80.0" />

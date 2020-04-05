@@ -1,5 +1,6 @@
 package org.openjfx.MusicLibraryFX.controllers;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -33,7 +34,7 @@ public class AlbumController  implements Initializable{
 		// TODO Auto-generated method stub
 		albumName.setText(album.getLibelle());
 		artistName.setText(album.getArtist().getName());
-		Image image = new Image("file:\\" + System.getProperty("user.dir") + "\\UIImages\\"+ album.getPicture());
+		Image image = new Image("file:\\" +System.getProperty("user.dir") + "\\UIImages\\"+ album.getPicture());
 		albumImage.setImage(image);
 	}
 }
