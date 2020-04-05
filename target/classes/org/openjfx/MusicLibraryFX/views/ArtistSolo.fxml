@@ -8,11 +8,11 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="146.0" prefWidth="115.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Circle fx:id="circleImage" fill="DODGERBLUE" radius="45.0" stroke="BLACK" strokeType="INSIDE" VBox.vgrow="NEVER">
+      <Circle fx:id="circleImage" fill="DODGERBLUE" onMouseClicked="#OnClick" radius="45.0" stroke="BLACK" strokeType="INSIDE" VBox.vgrow="NEVER">
          <VBox.margin>
             <Insets left="12.0" top="5.0" />
          </VBox.margin></Circle>
-      <Label fx:id="artistName" prefHeight="53.0" prefWidth="114.0" text="Artist Name">
+      <Label fx:id="artistName" onMouseClicked="#OnClick" prefHeight="53.0" prefWidth="114.0" text="Artist Name">
          <VBox.margin>
             <Insets />
          </VBox.margin>

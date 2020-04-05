@@ -48,15 +48,55 @@ public class ArtistSoloDeployementController implements Initializable {
 			for (Artist artist : artists) {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(App.class.getResource("views/ArtistSolo.fxml"));
-				loader.setController(new ArtistSoloController(artist));
+				loader.setController(new ArtistSoloController(artist,this));
 				Parent node = loader.load();
 				artistsFlowPane.setHgap(30);
 				artistsFlowPane.setVgap(30);
 				artistsFlowPane.getChildren().add(node);
-
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
+
+	public StackPane getStackpaneArtists() {
+		return stackpaneArtists;
+	}
+
+	public void setStackpaneArtists(StackPane stackpaneArtists) {
+		this.stackpaneArtists = stackpaneArtists;
+	}
+
+	public ScrollPane getScrollPaneArtists() {
+		return scrollPaneArtists;
+	}
+
+	public void setScrollPaneArtists(ScrollPane scrollPaneArtists) {
+		this.scrollPaneArtists = scrollPaneArtists;
+	}
+
+	public FlowPane getArtistsFlowPane() {
+		return artistsFlowPane;
+	}
+
+	public void setArtistsFlowPane(FlowPane artistsFlowPane) {
+		this.artistsFlowPane = artistsFlowPane;
+	}
+
+	public List<Artist> getArtists() {
+		return artists;
+	}
+
+	public void setArtists(List<Artist> artists) {
+		this.artists = artists;
+	}
+
+	public Button getReloadButton() {
+		return reloadButton;
+	}
+
+	public void setReloadButton(Button reloadButton) {
+		this.reloadButton = reloadButton;
+	}
+	
 }
