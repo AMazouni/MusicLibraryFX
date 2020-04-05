@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import org.openjfx.MusicLibraryFX.retrofit.beans.PlayList;
+import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 import org.openjfx.MusicLibraryFX.retrofit.repositories.PlayListRepo;
 import org.openjfx.MusicLibraryFX.retrofit.webcontroller.fascade.PlayListService;
 
@@ -63,6 +64,20 @@ public class PlayListServiceImpl implements PlayListService{
 		Call<PlayList> repos = service.findByLibelle(libelle);
 		PlayList playList = repos.execute().body();
 		return playList;
+	}
+
+	@Override
+	public List<Song> ListSongsById(Long id) throws IOException {
+		Call<List<Song>> repos = service.ListSongsById(id);
+		List<Song> songs = repos.execute().body();
+		return songs;
+	}
+
+	@Override
+	public List<Song> ListSongsByLibelle(String libelle) throws IOException {
+		Call<List<Song>> repos = service.ListSongsByLibelle(libelle);
+		List<Song> songs = repos.execute().body();
+		return songs;
 	}
 
 }

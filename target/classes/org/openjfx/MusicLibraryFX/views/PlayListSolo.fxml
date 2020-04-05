@@ -8,11 +8,11 @@
 
 <VBox fx:id="playListVbox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="107.0" prefWidth="91.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="playListImage" fitHeight="85.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="playListImage" fitHeight="85.0" fitWidth="79.0" onMouseClicked="#OnClick" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../UIImages/GenericPlayListIcon.JPG" />
          </image></ImageView>
-      <Label fx:id="playListName" prefHeight="35.0" prefWidth="80.0" text="PlayList Name">
+      <Label fx:id="playListName" onMouseClicked="#OnClick" prefHeight="35.0" prefWidth="80.0" text="PlayList Name">
          <padding>
             <Insets left="5.0" />
          </padding>

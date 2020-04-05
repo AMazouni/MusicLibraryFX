@@ -49,7 +49,7 @@ public class PlayListsController implements Initializable{
 			for (PlayList playList : playLists) {
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(App.class.getResource("views/PlayListSolo.fxml"));
-				loader.setController(new PlayListSoloController(playList));
+				loader.setController(new PlayListSoloController(playList,this));
 				Parent node = loader.load();
 				playListFlowPane.setHgap(30);
 				playListFlowPane.setVgap(30);
@@ -60,5 +60,46 @@ public class PlayListsController implements Initializable{
 				e.getStackTrace();
 			}
 		}
+
+		public StackPane getStackpanePlayLists() {
+			return stackpanePlayLists;
+		}
+
+		public void setStackpanePlayLists(StackPane stackpanePlayLists) {
+			this.stackpanePlayLists = stackpanePlayLists;
+		}
+
+		public ScrollPane getScrollPanePlayLists() {
+			return scrollPanePlayLists;
+		}
+
+		public void setScrollPanePlayLists(ScrollPane scrollPanePlayLists) {
+			this.scrollPanePlayLists = scrollPanePlayLists;
+		}
+
+		public FlowPane getPlayListFlowPane() {
+			return playListFlowPane;
+		}
+
+		public void setPlayListFlowPane(FlowPane playListFlowPane) {
+			this.playListFlowPane = playListFlowPane;
+		}
+
+		public Button getReloadButton() {
+			return reloadButton;
+		}
+
+		public void setReloadButton(Button reloadButton) {
+			this.reloadButton = reloadButton;
+		}
+
+		public List<PlayList> getPlayLists() {
+			return playLists;
+		}
+
+		public void setPlayLists(List<PlayList> playLists) {
+			this.playLists = playLists;
+		}
+		
 	    
 }
