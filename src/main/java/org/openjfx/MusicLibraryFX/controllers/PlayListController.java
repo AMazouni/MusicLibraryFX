@@ -4,17 +4,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
-import com.gluonhq.charm.glisten.control.Avatar;
 import org.openjfx.MusicLibraryFX.App;
 import org.openjfx.MusicLibraryFX.retrofit.beans.PlayList;
 import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.PlayListServiceImpl;
-import org.openjfx.MusicLibraryFX.retrofit.webcontroller.impl.SongServiceImpl;
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.Image;
@@ -22,8 +21,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.ImagePattern;
-import javafx.scene.shape.Circle;
 
 public class PlayListController implements Initializable{
 	@FXML
@@ -73,6 +70,9 @@ public class PlayListController implements Initializable{
     
     private PlayList playList;
     
+    @FXML
+    private Button exit;
+    
     public PlayListController(PlayList playlist) {
 		// TODO Auto-generated constructor stub
     	this.playList = playlist;
@@ -104,9 +104,11 @@ public class PlayListController implements Initializable{
 			e.printStackTrace();
 		}
 	}
-    
-    
-    
+	
+	 @FXML
+	    void exit(ActionEvent event) {
+		 this.splitPane.setVisible(false);
+	    }
     
     
     
