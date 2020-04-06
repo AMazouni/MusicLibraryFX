@@ -38,22 +38,22 @@ public class ArtistWithListsController implements Initializable {
 	private Label artistName;
 
 	@FXML
-    private ScrollPane scrollPane;
+	private ScrollPane scrollPane;
 
 	@FXML
 	private FlowPane flowPane;
-	
+
 	@FXML
 	private StackPane stackPane;
-	
+
 	@FXML
-    private StackPane stackPane2;
-	
+	private StackPane stackPane2;
+
 	@FXML
-    private Button exitButton;
-	
+	private Button exitButton;
+
 	@FXML
-    private AnchorPane anchorPane;
+	private AnchorPane anchorPane;
 
 	private Artist artist;
 
@@ -79,36 +79,26 @@ public class ArtistWithListsController implements Initializable {
 		AlbumServiceImpl albumServiceImpl = new AlbumServiceImpl();
 		try {
 			List<Song> songs = songServiceImpl.findByArtistId(artist.getId());
-				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(App.class.getResource("views/SongList.fxml"));
-				loader.setController(new SongListController(songs));
-				Parent node = loader.load();
-				stackPane.getChildren().add(node);
-				List<Album> albums = albumServiceImpl.findByArtistId(artist.getId());
-				FXMLLoader loader2 = new FXMLLoader();
-				loader2.setLocation(App.class.getResource("views/AlbumList.fxml"));
-				loader2.setController(new AlbumsListController(albums));
-				Parent node2 = loader2.load();
-				stackPane2.getChildren().add(node2);
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(App.class.getResource("views/SongList.fxml"));
+			loader.setController(new SongListController(songs));
+			Parent node = loader.load();
+			stackPane.getChildren().add(node);
+			List<Album> albums = albumServiceImpl.findByArtistId(artist.getId());
+			FXMLLoader loader2 = new FXMLLoader();
+			loader2.setLocation(App.class.getResource("views/AlbumList.fxml"));
+			loader2.setController(new AlbumsListController(albums));
+			Parent node2 = loader2.load();
+			stackPane2.getChildren().add(node2);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
-	  @FXML
-	    void exit(ActionEvent event) {
-		  this.anchorPane.setVisible(false);
-	    }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@FXML
+	void exit(ActionEvent event) {
+		this.anchorPane.setVisible(false);
+	}
+
 }
