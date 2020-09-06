@@ -31,7 +31,8 @@ import javafx.stage.StageStyle;
  */
 public class App extends Application {
 
-	
+	static public Scene scene;
+	static public Boolean theme = Boolean.TRUE;
 	@Override
 	public void start(Stage stage) throws IOException {
 
@@ -69,11 +70,11 @@ public class App extends Application {
 		
 		   
 	
-	        Scene scene = new Scene(root);
+	      this.scene = new Scene(root);
 	  
      
-         scene.getStylesheets().setAll(App.class.getResource("views/stylesheet.css").toExternalForm());
-	        scene.setRoot(root);
+         this.scene.getStylesheets().setAll(App.class.getResource("views/stylesheet.css").toExternalForm());
+	        this.scene.setRoot(root);
 	        //stage.setResizable(false);
 	        stage.setTitle("FXML Welcome");
 	        stage.setScene(scene);
@@ -91,6 +92,17 @@ public class App extends Application {
 
 		
 	}
+	
+	public static void changeTheme() {
+	 if(App.theme) {
+		 App.scene.getStylesheets().removeAll(App.class.getResource("views/stylesheet.css").toExternalForm());
+		 App.theme= Boolean.FALSE;
+	 }else {
+		 App.scene.getStylesheets().setAll(App.class.getResource("views/stylesheet.css").toExternalForm());
+		 App.theme= Boolean.TRUE;	 
+	 }
+	}
+	
 	//To initialize the first static template that won't change , top and bottom .
 /*	public void Init () {
 		// Initialize the Top

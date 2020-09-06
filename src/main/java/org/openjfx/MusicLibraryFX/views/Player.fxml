@@ -79,6 +79,11 @@
                         </Button>
                      </children>
                   </HBox>
+                  <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="43.0" prefWidth="464.0">
+                     <children>
+                        <Button fx:id="theme" mnemonicParsing="false" onAction="#changeTheme" text="Light Mode" textAlignment="RIGHT" />
+                     </children>
+                  </HBox>
                </children>
             </VBox>
          </children>

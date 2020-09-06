@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
 
+import org.openjfx.MusicLibraryFX.App;
 import org.openjfx.MusicLibraryFX.retrofit.beans.Song;
 
 import com.goxr3plus.streamplayer.enums.Status;
@@ -49,7 +50,19 @@ public class PlayerController extends StreamPlayer implements Initializable, Str
 
 	@FXML
 	private Button forwardButton;
+	
+    @FXML
+    private Button theme;
 
+    @FXML
+    void changeTheme(ActionEvent event) {
+     App.changeTheme();
+     if(App.theme) {
+    	 this.theme.setText("Light Mode");
+     }else {
+    	 this.theme.setText("Dark Mode");
+     }
+    }
 	Song song;
 
 	public Song getSong() {
